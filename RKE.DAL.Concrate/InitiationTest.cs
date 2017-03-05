@@ -11,7 +11,7 @@ namespace RKE.DAL.Concrate
     public class InitiationTest : IInitiationTest
     {
         public string GetResult()
-        {
+        { 
             return "It\'s work\'s";
         }
     }
