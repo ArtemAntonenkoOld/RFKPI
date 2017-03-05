@@ -9,11 +9,16 @@ using System.Threading.Tasks;
 
 namespace RKE.DAL.Abstract.IContextOfDatabase
 {
-    public interface IDataContext : IDisposable
+    public interface IRKEContext : IDisposable
     {
-        IDbSet<Teacher> Teacher { get; set; }
+
         IDbSet<Lesson> Lesson { get; set; }
-       
+        IDbSet<Teacher> Teacher { get; set; }
+        IDbSet<ExternalStudentsGroup> ExternalStudentsGroup { get; set; }
+        IDbSet<Group> Group { get; set; }
+        IDbSet<Session> Session { get; set; }
+        IDbSet<Week> Week { get; set; }
+        IDbSet<LessonForExternalStudents> LessonForExternalStudents { get; set; }
         IDbSet<TEntity> Set<TEntity>() where TEntity : class;
         DbEntityEntry Entry(object entity);
         int SaveChanges();

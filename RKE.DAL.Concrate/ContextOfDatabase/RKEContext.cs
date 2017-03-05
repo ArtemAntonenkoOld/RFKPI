@@ -11,16 +11,26 @@ using System.Threading.Tasks;
 namespace RKE.DAL.Concrate.ContextOfDatabase
 {
     
-    public class RKEContext : DbContext, IDataContext
+    public class RKEContext : DbContext, IRKEContext
     {
 
         public RKEContext()
-            : base("name=RKEDatabaseConnectionString")
-        {
+            : base("name=RKEDatabaseConnectionString") { 
+            Database.SetInitializer<RKEContext>(new CreateDatabaseIfNotExists<RKEContext>());
+
+        
         }
 
         public IDbSet<Lesson> Lesson { get; set; }
         public IDbSet<Teacher> Teacher { get; set; }
+        public IDbSet<ExternalStudentsGroup> ExternalStudentsGroup { get; set; }
+        public IDbSet<Group> Group { get; set; }
+        public IDbSet<Session> Session  { get; set; }
+        public IDbSet<Week> Week { get; set; }
+
+        public IDbSet<LessonForExternalStudents> LessonForExternalStudents { get; set; }
+
+
         public IDbSet<TEntity> Set<TEntity>() where TEntity : class
         {
             return base.Set<TEntity>();
@@ -37,6 +47,7 @@ namespace RKE.DAL.Concrate.ContextOfDatabase
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+        //    modelBuilder.Types().Configure(entity => entity.ToTable("tb" + entity.ClrType.Name));
 
         }
 

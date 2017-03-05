@@ -7,12 +7,12 @@ using RKE.DAL.Abstract;
 
 namespace RKE.DAL.Concrate
 {
-    [BindsTo(typeof(IInitiationTest))]
+    /*[BindsTo(typeof(IInitiationTest))]
     public class InitiationTest : IInitiationTest
     {
         public string GetResult()
         { 
             return "It\'s work\'s";
         }
-    }
+    }*/
 }

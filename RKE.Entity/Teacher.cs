@@ -25,11 +25,12 @@ namespace RKE.Entity
         public string ShortName { get; set; }
         [Column("cPosition")]
         public string Position { get; set; }
-        [Key]
+        
         [Column("cLink")]
         public string Link { get; set; }
         
         public ICollection<Lesson> Lessons { get; set; }
-
+        public ICollection<LessonForExternalStudents> ExternalGroup { get; set; }
+        public ICollection<Session> Session { get; set; }
     }
 }

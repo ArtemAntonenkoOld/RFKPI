@@ -1,7 +1,11 @@
-﻿using Microsoft.Owin;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(RKE.WebUI.Startup))]
+[assembly: OwinStartup(typeof(RKE.WebUI.Startup))]
+
 namespace RKE.WebUI
 {
     public partial class Startup

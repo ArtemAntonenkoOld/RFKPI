@@ -1,4 +1,5 @@
 ﻿using RKE.DAL.Concrate.ContextOfDatabase;
+using RKE.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace RKE.OpenConsole
         static void Main(string[] args)
         {
            
+            
         }
     }
 }
