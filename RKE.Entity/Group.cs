@@ -15,8 +15,11 @@ namespace RKE.Entity
         [Key]
         [Column("cId")]
         public int Id { get; set; }
+        [Column("cNameOfGroup")]
         public string NameOfGroup { get; set; }
-        public string Rozkladink { get; set; }
+        [Column("cRozkladLink")]
+        public string RozkladLink { get; set; }
+
         public ICollection<Week> Weeks { get; set; }
         public ICollection<Session> Session { get; set; }
     }

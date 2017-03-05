@@ -12,6 +12,7 @@ namespace RKE.Entity
         [Key]
         [Column("cId")]
         public int Id { get; set; }
+        [Column("cNumberOfWeek")]
         public int NumberOfWeek { get; set; }
         public ICollection<Lesson> Lessons { get; set; }
     }
