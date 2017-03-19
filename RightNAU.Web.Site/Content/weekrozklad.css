@@ -1,0 +1,119 @@
+.search {
+	width:100%;
+	height:300px;
+	text-align:center;
+	color:#fff;
+	background-size:100%;
+	background-position:top;
+}
+
+#sMain{background-image: url(../img/search/main.JPG) ;}
+#sMain .mask{background-image: linear-gradient(to bottom, rgba(56,148,116,0.7) 0%,rgba(56,148,116,1) 100%);}
+#sRozklad{background-image: url(../img/search/rozklad.jpg); background-position:center;}
+#sRozklad .mask{background-color: rgba(60,30,0,0.7);}
+#sRozkladsel{background-image: url(../img/search/rozkladsel.jpg); background-position:center;}
+#sRozkladsel .mask{background-color: rgba(0,0,0,0.7);}
+
+.search .mask{	
+	position:relative;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	display:table;
+}
+.search .mask div{
+	display:table-cell;
+	vertical-align: middle;
+}
+.search a{
+	text-decoration:none;
+	color:#fff;
+	opacity:0.8;
+}
+.search h1{
+	line-height:50px;
+	font-size:5ex;
+	font-family:lato-bold;
+	text-transform:uppercase;}
+	
+	.search h2{
+	line-height:25px;
+	font-size:2.5ex;
+	font-family:lato-regular;
+	opacity:0.5;}
+	
+.search a:hover{
+	opacity:1;
+}
+<!-- CSS -->
+
+table.table{
+	border: 0px rgb(75, 75, 80) solid;
+	width: 100%;
+	height: 210px;
+	border-spacing: 0px;
+	display:block;
+	float:none;
+}
+table.table th{
+	border: 1px rgb(75, 75, 80) solid;
+	background-color: rgb(104, 195, 163);
+	height: 30px;
+	text-align:center;
+	vertical-align:middle;	
+	padding: 5px;
+	font-family:lato-light;
+}
+table.table td{
+	border: 1px rgb(75, 75, 80) solid;
+	background-color: rgb(255, 255, 255);
+	height: 40px;
+	text-align:center;
+	vertical-align:middle;
+	width:15.9%;
+	padding: 5px;
+		font-family:lato-regular;
+}
+table.table thead tr:nth-child(2) th{background-color:#c4e4d9 ;}
+table.table .lesson{
+width:5%;
+}
+.lessonName{
+	text-transform:uppercase;
+	font-family:lato-light;
+	font-size:18px;
+	margin-bottom:5px;
+	}
+.teacher{
+	font-size:14px;
+	color:#666;
+}
+.room{
+	font-size:14px;
+}
+table.table .lesson{
+	background-color:  #c4e4d9; 
+	font-family:lato-light;
+	}
+	
+body,html{min-width:800px;}
+
+
+.select{
+	width:100%;
+	height:25px;
+	text-align:center;
+	margin:50px 0 45px 0;
+	float:none;}
+.select button{
+		width:33.33%;float:left; background-color:#666; border-radius:10px; box-shadow:none; border:none; height:25px; color:white;}
+.select button.selected{background-color:rgb(44, 135, 103); color:white;}
+.select button:hover{background-color:#68c3a2; color:black;}
+
+.select p{width:33.33%;
+font-family:lato-regular;float:left;
+font-size:24px}
+.select b{color:#33cc99;font-family:lato-bold;}
+.select span{
+	letter-spacing:-.5ex;}

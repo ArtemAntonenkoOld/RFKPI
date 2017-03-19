@@ -1,4 +1,5 @@
-﻿using RKE.DAL.Abstract.IContextOfDatabase;
+﻿using RKE.IOC.Common.Attributes;
+using RKE.DAL.Abstract.IContextOfDatabase;
 using RKE.Entity;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,8 @@ using System.Threading.Tasks;
 
 namespace RKE.DAL.Concrate.ContextOfDatabase
 {
-    
+    [RequestScope]
+    [BindsTo(typeof(IRKEContext))]
     public class RKEContext : DbContext, IRKEContext
     {
 
@@ -23,7 +25,7 @@ namespace RKE.DAL.Concrate.ContextOfDatabase
 
         public IDbSet<Lesson> Lesson { get; set; }
         public IDbSet<Teacher> Teacher { get; set; }
-        public IDbSet<ExternalStudentsGroup> ExternalStudentsGroup { get; set; }
+        //public IDbSet<ExternalStudentsGroup> ExternalStudentsGroup { get; set; }
         public IDbSet<Group> Group { get; set; }
         public IDbSet<Session> Session  { get; set; }
         public IDbSet<Week> Week { get; set; }

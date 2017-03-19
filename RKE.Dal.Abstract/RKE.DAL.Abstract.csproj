@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RKE.DLl.Abstract</RootNamespace>
     <AssemblyName>RKE.DAL.Abstract</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -51,7 +52,7 @@
   <ItemGroup>
     <Compile Include="IContextOfDatabase\IRKEContext.cs" />
     <Compile Include="IRepositories\IGenericRepository.cs" />
-    <Compile Include="IInitiationTest.cs" />
+    <Compile Include="ISampleTest.cs" />
     <Compile Include="IRepositories\IGroupRepository.cs" />
     <Compile Include="IRepositories\ISessionRepository.cs" />
     <Compile Include="IRepositories\IExternalStudentsGroupRepository.cs" />
@@ -65,6 +66,14 @@
     <ProjectReference Include="..\RKE.Entity\RKE.Entity.csproj">
       <Project>{60b6292d-90c4-44da-8aa1-3c4e9ae9bf3f}</Project>
       <Name>RKE.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RKE.IOC.Common\RKE.IOC.Common.csproj">
+      <Project>{c7fcbd30-0389-4081-a1ed-80c24058d621}</Project>
+      <Name>RKE.IOC.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RKE.IOC.Manager\RKE.IOC.Manager.csproj">
+      <Project>{b21a4048-f59c-428b-8372-20139c32f17a}</Project>
+      <Name>RKE.IOC.Manager</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

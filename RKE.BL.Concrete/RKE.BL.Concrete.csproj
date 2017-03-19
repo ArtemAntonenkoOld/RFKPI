@@ -11,6 +11,7 @@
     <AssemblyName>RKE.BL.Concrete</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataBind\RozkladBind.cs" />
+    <Compile Include="Mappers\LessonMapper.cs" />
     <Compile Include="Mappers\RozkladMapper.cs" />
+    <Compile Include="Mappers\WeekMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -49,9 +52,25 @@
       <Project>{516372ab-dc22-42a6-9da4-850c13873418}</Project>
       <Name>RKE.BL.Abstract</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RKE.Dal.Abstract\RKE.DAL.Abstract.csproj">
+      <Project>{1e36cf47-8851-48a0-8778-1957b9e1c96a}</Project>
+      <Name>RKE.DAL.Abstract</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RKE.DAL.Concrate\RKE.DAL.Concrate.csproj">
       <Project>{b3494e51-6785-431c-8ccc-ba1772618583}</Project>
       <Name>RKE.DAL.Concrate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RKE.Entity\RKE.Entity.csproj">
+      <Project>{60b6292d-90c4-44da-8aa1-3c4e9ae9bf3f}</Project>
+      <Name>RKE.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RKE.IOC.Common\RKE.IOC.Common.csproj">
+      <Project>{c7fcbd30-0389-4081-a1ed-80c24058d621}</Project>
+      <Name>RKE.IOC.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RKE.IOC.Manager\RKE.IOC.Manager.csproj">
+      <Project>{b21a4048-f59c-428b-8372-20139c32f17a}</Project>
+      <Name>RKE.IOC.Manager</Name>
     </ProjectReference>
     <ProjectReference Include="..\RKE.ViewModels\RKE.UIModels.csproj">
       <Project>{67e8d9e2-cda5-430f-a707-8608fb1474d7}</Project>

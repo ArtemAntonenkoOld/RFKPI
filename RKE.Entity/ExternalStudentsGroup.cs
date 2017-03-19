@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RKE.Entity
-{
+{/*
     [Table("tbExternalStudentsGroup")]
     public class ExternalStudentsGroup
     {
@@ -16,5 +16,6 @@ namespace RKE.Entity
         public string NameOfGroup { get; set; }
         public ICollection<LessonForExternalStudents> LessonsForExternalStudents  { get; set; }
         public ICollection<Session> Session { get; set; }
-    }
+        public int TypeOfStudent { get; set; }
+    }*/
 }

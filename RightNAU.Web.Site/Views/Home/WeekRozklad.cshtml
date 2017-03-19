@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "WeekRozklad";
+}
+@section CssContent
+    {
+    <link href="@Url.Content("~/Content/weekrozklad.css")" rel="stylesheet" type="text/css" />
+}
+@{Html.RenderPartial("../Partial/_WeekRozklad");}
+
+<div class="content">
+    <div class="incontent">
+
+        <div class="select">
+            <button>Перший тиждень</button>
+            <p><span>------------</span>&nbsp;&nbsp;R<b>N&nbsp;</b><span>------------</span></p>
+            <button class="selected">Другий тиждень</button>
+        </div>
+
+        @{Html.RenderPartial("../Partial/_WeekRozkladTable");}
+      </div>
+</div>

@@ -1,0 +1,201 @@
+
+        #mRozklad {
+            background-image: url(/img/search/map.jpg);
+            background-position: center;
+        }
+
+            #mRozklad .mask {
+                background-color: rgba(0,3,0,0.7);
+            }
+            .search {
+	width:100%;
+	height:300px;
+	text-align:center;
+	color:#fff;
+	background-size:100%;
+	background-position:top;
+}
+
+        .text_map {
+            margin: 50px auto;
+            width: 100%;
+            text-align: center;
+            font-family: lato-light;
+            font-size: 30px;
+        }
+
+        .map {
+            position: relative;
+            text-align: center;
+            width: 100%;
+        }
+
+        .search .mask {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: table;
+        }
+
+            .search .mask div {
+                display: table-cell;
+                vertical-align: middle;
+            }
+
+        .search a {
+            text-decoration: none;
+            color: #fff;
+            opacity: 0.8;
+        }
+
+        .search h1 {
+            line-height: 50px;
+            font-size: 5ex;
+            font-family: lato-bold;
+            text-transform: uppercase;
+        }
+
+        .search h2 {
+            line-height: 25px;
+            font-size: 2.5ex;
+            font-family: lato-regular;
+            opacity: 0.5;
+        }
+
+.search a:hover {
+    opacity: 1;
+}
+.grid {
+	position: relative;
+	clear: both;
+	padding: 1em 0 4em;
+	list-style: none;
+	text-align: center;
+	display:block;
+	 width: 100%;
+	    margin: 30px auto;
+	    overflow: hidden;
+}
+
+.grid figure {
+	display:block;
+	position: relative;
+	overflow: hidden;
+	background: #3085a3;
+	text-align: center;
+	cursor: pointer;
+	border-radius:5px;
+}
+.grid .bg{
+	position:relative;
+	padding:3px;
+	background-color:#fff;
+	text-alight:center;
+	float:left;
+	display:block;	
+	width: 22%;
+	margin:  1% 1% 10px 1%;	
+	 }
+	
+.grid figure img {
+	position: relative;
+	display: block;
+	width:100%;
+	height:auto;
+	opacity: 1;
+}
+
+.grid figure figcaption {
+	padding-top: 4em;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1em;
+	backface-visibility: hidden;
+	display:inline-block;
+
+}
+
+.grid figure figcaption::before,
+.grid figure figcaption::after {
+	pointer-events: none;
+}
+
+.grid figure figcaption,
+.grid figure figcaption > a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.grid figure figcaption > a {
+	z-index: 1000;
+	text-indent: 200%;
+	white-space: nowrap;
+	font-size: 0;
+	opacity: 0;
+}
+
+.grid figure h2 {
+	word-spacing: -0.15em;
+	font-weight: 300;
+		background-color:#68c3a3;
+}
+
+.grid figure h2 span {
+	font-weight: 800;
+}
+
+.grid figure h2{
+	margin: 0;
+}
+
+figure.effect-goliath {
+	background: #000;
+}
+
+figure.effect-goliath img,
+figure.effect-goliath h2 {
+	transition: transform 0.35s;
+}
+
+figure.effect-goliath img {
+	backface-visibility: hidden;
+	transition:opacity .35s, transform 0.35s;
+}
+
+figure.effect-goliath h2{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	padding: 15px 0;
+	width:100%;
+}
+
+
+figure.effect-goliath:hover img {
+	transform: translate3d(0,-10px,0);
+	opacity: 0.8;
+}
+
+figure.effect-goliath:hover h2 {
+	transform: translate3d(0,-63px,0);
+}
+
+@media only screen and (max-width : 940px),
+only screen and (max-device-width : 940px){
+	.bg {width: 21%!important;}
+}
+ 
+@media only screen and (max-width : 720px),
+only screen and (max-device-width : 720px){
+	.bg {width: 45%!important;}
+}
+ 
+@media only screen and (max-width : 540px),
+only screen and (max-device-width : 540px){
+	.bg {width: 96%!important;}
+}

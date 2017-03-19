@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RKE.DAL.Abstract.Repositories
 {
-    public interface IExternalStudentGroupRepository:IGenericRepository<ExternalStudentsGroup>
+   /* public interface IExternalStudentGroupRepository:IGenericRepository<ExternalStudentsGroup>
     {
-    }
+    }*/
 }

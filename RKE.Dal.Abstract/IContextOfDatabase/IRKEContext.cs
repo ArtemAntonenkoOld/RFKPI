@@ -14,7 +14,7 @@ namespace RKE.DAL.Abstract.IContextOfDatabase
 
         IDbSet<Lesson> Lesson { get; set; }
         IDbSet<Teacher> Teacher { get; set; }
-        IDbSet<ExternalStudentsGroup> ExternalStudentsGroup { get; set; }
+        //DbSet<ExternalStudentsGroup> ExternalStudentsGroup { get; set; }
         IDbSet<Group> Group { get; set; }
         IDbSet<Session> Session { get; set; }
         IDbSet<Week> Week { get; set; }

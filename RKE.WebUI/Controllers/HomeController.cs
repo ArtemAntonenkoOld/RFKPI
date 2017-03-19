@@ -8,11 +8,12 @@ namespace RKE.WebUI.Controllers
 {
     public class HomeController : Controller
     {
+        // GET: Home
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
-
             return View();
         }
+
+        // GET: Home/Details/5
     }
 }

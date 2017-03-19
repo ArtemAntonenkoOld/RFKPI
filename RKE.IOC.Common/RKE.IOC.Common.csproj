@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{124F3B9C-557A-4AB9-B24F-2C2CE21BCD59}</ProjectGuid>
+    <ProjectGuid>{C7FCBD30-0389-4081-A1ED-80C24058D621}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RKE.IOC.Common</RootNamespace>
@@ -40,8 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseIOCAttribute.cs" />
-    <Compile Include="BindsToAttribute.cs" />
+    <Compile Include="Attributes\Abstract\BaseIoCAttribute.cs" />
+    <Compile Include="Attributes\BindsToAttribute.cs" />
+    <Compile Include="Attributes\BindsToSelfAttribute.cs" />
+    <Compile Include="Attributes\ConfigAttribute.cs" />
+    <Compile Include="Attributes\IgnoreComponentAttribute.cs" />
+    <Compile Include="Attributes\RequestScopeAttribute.cs" />
+    <Compile Include="Attributes\SingletonScopeAttribute.cs" />
+    <Compile Include="Interfaces\IScopedServiceGetter.cs" />
+    <Compile Include="Interfaces\IServiceContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

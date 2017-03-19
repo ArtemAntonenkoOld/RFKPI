@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RKE.DAL.Concrate</RootNamespace>
     <AssemblyName>RKE.DAL.Concrate</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -50,14 +51,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContextOfDatabase\RKEContext.cs" />
-    <Compile Include="InitiationTest.cs" />
-    <Compile Include="Migrations\201703052225315_InitialCreate.cs" />
-    <Compile Include="Migrations\201703052225315_InitialCreate.Designer.cs">
-      <DependentUpon>201703052225315_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703052233035_InitialCreate1.cs" />
-    <Compile Include="Migrations\201703052233035_InitialCreate1.Designer.cs">
-      <DependentUpon>201703052233035_InitialCreate1.cs</DependentUpon>
+    <Compile Include="SampleTest.cs" />
+    <Compile Include="Migrations\201703071318507_Ititial.cs" />
+    <Compile Include="Migrations\201703071318507_Ititial.Designer.cs">
+      <DependentUpon>201703071318507_Ititial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -83,20 +80,17 @@
       <Name>RKE.Entity</Name>
     </ProjectReference>
     <ProjectReference Include="..\RKE.IOC.Common\RKE.IOC.Common.csproj">
-      <Project>{124f3b9c-557a-4ab9-b24f-2c2ce21bcd59}</Project>
+      <Project>{c7fcbd30-0389-4081-a1ed-80c24058d621}</Project>
       <Name>RKE.IOC.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\RKE.IOC.Manager\RKE.IOC.Manager.csproj">
-      <Project>{f69aa04a-3ee4-4ba2-bc34-513c91b5f49e}</Project>
+      <Project>{b21a4048-f59c-428b-8372-20139c32f17a}</Project>
       <Name>RKE.IOC.Manager</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201703052225315_InitialCreate.resx">
-      <DependentUpon>201703052225315_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703052233035_InitialCreate1.resx">
-      <DependentUpon>201703052233035_InitialCreate1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703071318507_Ititial.resx">
+      <DependentUpon>201703071318507_Ititial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

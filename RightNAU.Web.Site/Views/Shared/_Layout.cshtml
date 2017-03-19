@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @RenderSection("CssContent",false);
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <header>
+        <h1>RIGHT<b>NAU</b></h1>
+        <div class="menu">
+            <a href="#">Головна</a>
+            <a href="#">Про нас</a>
+            <a href="#">Контакти</a>
+            <a href="#">Авторизація</a>
+        </div>
+    </header>
+    <div class="container body-content">
+        @RenderBody()
+        
+        <div style="clear:both;"></div>
+    <footer>
+        <h3>©RIGHTNAU  @DateTime.Now.Year  All rights reserved</h3>
+    </footer>
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

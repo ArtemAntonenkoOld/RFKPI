@@ -10,11 +10,11 @@ using RKE.DAL.Abstract.Repositories;
 
 namespace RKE.DAL.Concrate.Repositories
 {
-    public class ExternalStudentGroupRepository : GenericRepository<ExternalStudentsGroup>,IExternalStudentGroupRepository
+   /* public class ExternalStudentGroupRepository : GenericRepository<ExternalStudentsGroup>,IExternalStudentGroupRepository
     {
         public ExternalStudentGroupRepository(IRKEContext context) : base(context)
         {
 
         }
-    }
+    }*/
 }
