@@ -22,16 +22,11 @@ namespace RKE.WebUI
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
-
+           
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/bootstrap.css"));
             bundles.Add(new StyleBundle("~/Content/index").Include(
-                   "~/Content/index.css"));
-            bundles.Add(new StyleBundle("~/Content/rozklad").Include(
-                   "~/Content/rozklad.css"));
-            bundles.Add(new StyleBundle("~/Content/weekrozklad").Include(
-                   "~/Content/weekrozklad.css"));
+                     "~/Content/index.css"));
         }
     }
 }

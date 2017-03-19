@@ -1,228 +1,157 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+/*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #fff;
 }
-html,body{height:100%;}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+
+
+
+/*
+ * Base structure
+ */
+.input-group{
+    margin: 20px auto;
+
+}
+html,
+body {
+  height: 100%;
+  background-color:#6B96BF;
 }
 body {
-	line-height: 1;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
-ol, ul {
-	list-style: none;
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
 }
-blockquote, q {
-	quotes: none;
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+.cover-container {
+  margin-right: auto;
+  margin-left: auto;
 }
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+
+/* Padding for spacing */
+.inner {
+  padding: 30px;
+}
+
+
+/*
+ * Header
+ */
+.masthead-brand {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.masthead-nav > li {
+  display: inline-block;
+}
+.masthead-nav > li + li {
+  margin-left: 20px;
+}
+.masthead-nav > li > a {
+  padding-right: 0;
+  padding-left: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff; /* IE8 proofing */
+  color: rgba(255,255,255,.75);
+  border-bottom: 2px solid transparent;
+}
+.masthead-nav > li > a:hover,
+.masthead-nav > li > a:focus {
+  background-color: transparent;
+  border-bottom-color: #a9a9a9;
+  border-bottom-color: rgba(255,255,255,.25);
+}
+.masthead-nav > .active > a,
+.masthead-nav > .active > a:hover,
+.masthead-nav > .active > a:focus {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+@media (min-width: 768px) {
+  .masthead-brand {
+    float: left;
+  }
+  .masthead-nav {
+    float: right;
+  }
 }
 
 
 
-@font-face {
-    font-family: lato-regular; 
-    src: url(../fonts/Lato/Lato-Regular.ttf); 
-   }
-@font-face {
-    font-family: lato-light; 
-    src: url(../fonts/Lato/Lato-Light.ttf); 
-   }
-@font-face {
-    font-family: lato-bold; 
-    src: url(../fonts/Lato/Lato-Bold.ttf); 
-   }
-
-
-
-header{
-	width:100%;
-	height:100%;
-	background-image:url(../img/header/plane.jpg);
-	font-family: Lato;
-	color:white;
-	background-position:center;
-}
-header h1{ 
-	font-size: 60px;
-	font-family: lato-light; 
-	line-height: 50px;
-}
-header h1 b{ 
-	font-family: lato-bold; 
-	color:#33cc99;
-}
-header h2{
-	font-size: 14px;
-	font-family: lato-regular;
-	line-height:20px; 
-}
-header h2 b{ 
-	font-family: lato-bold;
-	font-size:25px;
-	letter-spacing:-0.4ex;
-}
-header div{
-	background-color:rgba(26,30,35,0.5);
-	text-align:center;
-	display:table;
-	
-	position:relative;
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-	}
-header div div{
-	display:table-cell;
-	vertical-align: middle;
-}
-header p img{
-	height:6ex;
-	width:6ex;
-	opacity:0.7;
-}
-header p img:hover{
-	opacity:1;
+.input-group {
+  padding: 10px 20px;
+  font-weight: bold;
 }
 
 
 
+/*
+ * Footer
+ */
+
+.mastfoot {
+  color: #999; /* IE8 proofing */
+  color: rgba(255,255,255,.5);
+}
 
 
-.content{
-	width:100%;
-}
-.incontent{
-	width:80%;
-	margin:10px auto;
-}
-.incontent .menu{
-	width:100%;
-	text-align:right;
-}
-.incontent .menu a{
-	text-decoration:none;
-	color:#333;
-	font-family:lato-bold;
-	padding:5px 10px;
-}
-.incontent .menu a:hover{
-	text-decoration:none;
-	color:#000;
-	font-family:lato-bold;
-	padding:5px 10px;
-}
-#bmenu{
-	position:relative;
-	width:100%;
-	font-family:lato-regular;
-	color:#555252;
-	margin:172px 0;
-	height:300px;
-}
-#bmenu div{
-	position:relative;
-	width:20%;
-	margin-left:6.33%;
-	float:left;
-	text-align:center;
-}
-#bmenu a{
-	text-decoration:none;
-	color:#555252;
-}
-#bmenu div:first-child{
-	margin-left:0;}
-#bmenu h3{
-	font-size:35px;
-	margin:25px 0;
+/*
+ * Affix and center
+ */
+
+@media (min-width: 768px) {
+  /* Pull out the header and footer */
+  .masthead {
+    position: fixed;
+    top: 0;
+  }
+  .mastfoot {
+    position: fixed;
+    bottom: 0;
+  }
+  /* Start the vertical centering */
+  .site-wrapper-inner {
+    vertical-align: middle;
+  }
+  /* Handle the widths */
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+  }
 }
 
-.search {
-	width:100%;
-	height:300px;
-	text-align:center;
-	color:#fff;
-	background-size:100%;
-	background-position:top;
+@media (min-width: 992px) {
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 700px;
+  }
 }
-
-#sMain{background-image: url(../img/search/main.JPG) ;}
-#sMain .mask{background-image: linear-gradient(to bottom, rgba(56,148,116,0.7) 0%,rgba(56,148,116,1) 100%);}
-#sRozklad{background-image: url(../img/search/rozklad.jpg); background-position:center;}
-#sRozklad .mask{background-color: rgba(60,30,0,0.7);}
-
-.search .mask{	
-	position:relative;
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-	display:table;
-}
-.search .mask div{
-	display:table-cell;
-	vertical-align: middle;
-}
-.search a{
-	text-decoration:none;
-	color:#fff;
-	opacity:0.8;
-}
-.search h1{
-	line-height:50px;
-	font-size:5ex;
-	font-family:lato-bold;
-	text-transform:uppercase;}
-	
-	.search h2{
-	line-height:25px;
-	font-size:2.5ex;
-	font-family:lato-regular;
-	opacity:0.5;}
-	
-.search a:hover{
-	opacity:1;
-}
-
-footer{
-	width:100%;
-	height:100px;
-	background-color:#4a4e52;
-	margin:25px 0 0 0;
-	text-align:center;
-	display:table;
-	}
-footer h3{
-	color:white;
-	font-family: lato-regular; 
-	font-size:13px;
-	display:table-cell;
-	vertical-align:middle;
+.btn-submit {
+        height: auto;
+    width: auto;
+    font-size: 14px;
 }

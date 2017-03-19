@@ -3,88 +3,61 @@
 <html>
 <head>
     <meta charset="utf-8">
-   
+    @Styles.Render("~/Content/css")
     @Styles.Render("~/Content/index")
+
 
 </head>
 
 <body>
 
-    <header>
-        <div>
-            <div>
-                <h1>RIGHT<b>NAU</b></h1>
-                <h2>
-                    <br>
-                    Твій персональний навігатор самого авіаційного ВЗН країни:<br>
-                    підкажемо де шуканий викладач і нагодуємо піццою з 8-ки.<br>
-                    <b>____</b><br>
-                    Ми в соціалках:
-                </h2>
-                <p>
-                    <br>
-                    <a href="#"><img src="img/header/social/facebook.png" /></a>&nbsp;&nbsp;&nbsp;
-                    <a href="#"><img src="img/header/social/tumblr.png" /></a>&nbsp;&nbsp;&nbsp;
-                    <a href="#"><img src="img/header/social/twitter.png" /></a>
-                </p>
-            </div>
-        </div>
-    </header>
+<div class="site-wrapper">
+    
 
-    <div class="content">
-        <div class="incontent">
-            <div class="menu">
-                <a href="#">Головна</a>
-                <a href="#">Про нас</a>
-                <a href="#">Контакти</a>
-                <a href="#">Авторизація</a>
-            </div>
-            <div id="bmenu">
-                <div>
-                    <a href="#">
-                        <img src="img/content/cat/book.png" />
-                        <h3>Розклад</h3>
-                        <p>Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civiLorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civiLorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civiLorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civi</p>
-                    </a>
-                </div>
-                <div>
-                    <a href="#">
-                        <img src="img/content/cat/toolbox.png" />
-                        <h3>Викладачі</h3>
-                        <p>Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civiLorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civiLorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civiLorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civi</p>
-                    </a>
-                </div>
-                <div>
-                    <a href="#">
-                        <img src="img/content/cat/map.png" />
-                        <h3>Мапа</h3>
-                        <p>Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civiLorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civiLorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civiLorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civi</p>
-                    </a>
-                </div>
-                <div>
-                    <a href="#">
-                        <img src="img/content/cat/camera.png" />
-                        <h3>Блог</h3>
-                        <p>Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civiLorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civiLorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civiLorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civi</p>
-                    </a>
+    <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+            <div class="masthead clearfix">
+                <div class="inner">
+                    <h3 class="masthead-brand">RKE</h3>
+                    <nav>
+                        <ul class="nav masthead-nav">
+                            <li class="active"><a href="#">Home</a></li>
+                            <li><a href="#">Features</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
+
+            <div class="text">
+                <h1 class="cover-heading">Rozklad KPI Extensions</h1>
+                @using (Html.BeginForm("Index", "Lel", FormMethod.Get))
+                {
+                    <div class="input-group col-md-4 col-sm-12">
+
+                        <input type="text" class="form-control" name="text" placeholder="Search for...">
+                        <span class="input-group-btn">
+                            <input type="submit" class="btn btn-default input-group-btn btn-submit" value="Go!"/>
+                        </span>
+                    </div>
+
+                }
+            </div>
+
+            <div class="mastfoot">
+                <div class="inner">
+                    <p>Powered by <a href="http://acts.kpi.ua">Acts</a> 2017
+                    </p>
+                    <p>Connect with us:kafedra@acts.kpi.ua</p>
+                </div>
+            </div>
+
         </div>
+
     </div>
 
-    <div class="search" id="sMain">
-        <div class="mask">
-            <div>
-                <h1>Знайди те, що тобі потрібно</h1>
-                <br>
-                <a href="#"><img src="img/search/search.png" /></a>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <h3>©RIGHTNAU  2016 All rights reserved</h3>
-    </footer>
-
+</div>
 </body>
 </html>
