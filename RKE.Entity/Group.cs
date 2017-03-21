@@ -20,6 +20,7 @@ namespace RKE.Entity
         [Column("cRozkladLink")]
         public string RozkladLink { get; set; }
         public int Type { get; set; }
+
         public ICollection<LessonForExternalStudents> LessonForExternalStudents { get; set; }
         public ICollection<Week> Weeks { get; set; }
         public ICollection<Session> Session { get; set; }

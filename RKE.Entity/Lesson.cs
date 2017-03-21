@@ -18,7 +18,9 @@ namespace RKE.Entity
         public string Aud { get; set; }
         [Column("cType")]
         public string Type { get; set; }
-        
+        public Teacher Teacher { get; set; }
+        public Week Week { get; set; }
+
         
     }
 }

@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataBind\RozkladBind.cs" />
+    <Compile Include="DataBind\RozkladDataHandler.cs" />
     <Compile Include="Mappers\LessonMapper.cs" />
     <Compile Include="Mappers\RozkladMapper.cs" />
     <Compile Include="Mappers\WeekMapper.cs" />

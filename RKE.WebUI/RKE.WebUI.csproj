@@ -201,6 +201,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LelController.cs" />
+    <Compile Include="Controllers\LessonsController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -257,6 +258,11 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Lel\Index.cshtml" />
+    <Content Include="Views\Lessons\LessonsForStudents.cshtml" />
+    <Content Include="Views\Lessons\LessonsForExternalStudents.cshtml" />
+    <Content Include="Views\Lessons\LessonsForTeachers.cshtml" />
+    <Content Include="Views\Lessons\Index.cshtml" />
+    <Content Include="Views\Home\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -305,6 +311,10 @@
     <ProjectReference Include="..\RKE.IOC.Manager\RKE.IOC.Manager.csproj">
       <Project>{b21a4048-f59c-428b-8372-20139c32f17a}</Project>
       <Name>RKE.IOC.Manager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RKE.ViewModels\RKE.UIModels.csproj">
+      <Project>{67e8d9e2-cda5-430f-a707-8608fb1474d7}</Project>
+      <Name>RKE.UIModels</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

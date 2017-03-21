@@ -19,5 +19,7 @@ namespace RKE.Entity
         public string Aud { get; set; }
         [Column("cNumberOfLesson")]
         public int NumberOfLesson { get; set; }
+        public Group Group { get; set; }
+        public Teacher Teacher { get; set; }
     }
 }

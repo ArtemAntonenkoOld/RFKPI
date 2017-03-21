@@ -15,5 +15,6 @@ namespace RKE.Entity
         [Column("cNumberOfWeek")]
         public int NumberOfWeek { get; set; }
         public ICollection<Lesson> Lessons { get; set; }
+        public Group Group { get; set; }
     }
 }
