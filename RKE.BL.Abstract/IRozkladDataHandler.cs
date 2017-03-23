@@ -10,7 +10,7 @@ namespace RKE.BL.Abstract
     public interface IRozkladDataHandler
     {
         //  Task<List<RozkladModel>> GetByGroup(string groupName);
-        Task<RozkladModel> GetByGroup(string groupName);
+        Task<List<RozkladModel>> GetByGroup(string groupName);
         // Task<RozkladModel> GetByGroup(string groupName,int week);
     }
 }

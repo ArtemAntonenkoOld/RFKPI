@@ -19,22 +19,22 @@ namespace RKE.BL.Concrete.DataBind
     {
         private readonly IGroupRepository _groupRepository;
         private readonly IWeekRepository _weekRepository;
-        private readonly ITeacherRepository _holidaysRepository;
+        //private readonly ITeacherRepository _teacherRepository;
         private readonly ILessonRepository _lessonRepository;
 
         public RozkladDataHandler(
             IGroupRepository groupRepository,
             IWeekRepository weekRepository,
-            ITeacherRepository holidaysRepository,
+       //     ITeacherRepository teacherRepository,
             ILessonRepository lessonRepository)
         {
             _groupRepository = groupRepository;
             _weekRepository = weekRepository;
             _lessonRepository = lessonRepository;
-            _holidaysRepository = holidaysRepository;
+         //   _teacherRepository = teacherRepository;
         }
 
-        public async Task<RozkladModel> GetByGroup(string groupName)
+        public async Task<List<RozkladModel>> GetByGroup(string groupName)
         {
             List<Group> res = await _groupRepository.FetchByAsync(p => p.NameOfGroup == groupName);
             RozkladMapper mapper = new RozkladMapper();

@@ -1,1 +1,16 @@
-﻿
+﻿@model List<RKE.UIModels.RozkladModel.RozkladModel>
+
+<div>
+    <h4>RozkladModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().GroupName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstOrDefault().GroupName)
+        </dd>
+
+    </dl>
+</div>

@@ -7,7 +7,7 @@
     <ProjectGuid>{1E36CF47-8851-48A0-8778-1957B9E1C96A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RKE.DLl.Abstract</RootNamespace>
+    <RootNamespace>RKE.DAL.Abstract</RootNamespace>
     <AssemblyName>RKE.DAL.Abstract</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

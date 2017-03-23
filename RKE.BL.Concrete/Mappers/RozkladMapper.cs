@@ -10,18 +10,21 @@ namespace RKE.BL.Concrete.Mappers
 {
     public class RozkladMapper
     {
-        public RozkladModel EntityToModel(List<Group> entity)
+        public List<RozkladModel> EntityToModel(List<Group> entity)
         {
             WeekMapper _weekMapper = new WeekMapper();
-            RozkladModel p = new RozkladModel() {
-                    GroupName =  entity.FirstOrDefault().NameOfGroup,
-                    WeekModel = _weekMapper.EntityToModel(entity.FirstOrDefault().Weeks.ToList())
-                };
-            
+            List<RozkladModel> p = new List<RozkladModel>();
+            foreach (var item in entity)
+            {
+                RozkladModel l = new RozkladModel();
+                l.GroupName = item.NameOfGroup;
+                l.WeekModel = _weekMapper.EntityToModel(item.Weeks.ToList());
+            p.Add(l);
+            }
             return p;
+            }
+
+
         }
 
-
     }
-    
-}
