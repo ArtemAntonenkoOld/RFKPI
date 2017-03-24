@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace RKE.Entity
 {
     [Table("tbLesson")]
-    public sealed class Lesson
+    public  partial class Lesson
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
@@ -18,8 +18,9 @@ namespace RKE.Entity
         public string Aud { get; set; }
         [Column("cType")]
         public string Type { get; set; }
-        public Teacher Teacher { get; set; }
-        public Week Week { get; set; }
+
+        public virtual Teacher Teacher { get; set; }
+        public virtual Week Week { get; set; }
 
         
     }

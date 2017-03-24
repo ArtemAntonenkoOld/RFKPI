@@ -36,6 +36,7 @@ namespace RKE.BL.Concrete.DataBind
 
         public async Task<List<RozkladModel>> GetByGroup(string groupName)
         {
+
             List<Group> res = await _groupRepository.FetchByAsync(p => p.NameOfGroup == groupName);
             RozkladMapper mapper = new RozkladMapper();
             return mapper.EntityToModel(res);

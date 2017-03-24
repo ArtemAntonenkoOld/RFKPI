@@ -51,6 +51,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContextOfDatabase\RKEContext.cs" />
+    <Compile Include="Migrations\201703241049342_recreat.cs" />
+    <Compile Include="Migrations\201703241049342_recreat.Designer.cs">
+      <DependentUpon>201703241049342_recreat.cs</DependentUpon>
+    </Compile>
     <Compile Include="SampleTest.cs" />
     <Compile Include="Migrations\201703071318507_Ititial.cs" />
     <Compile Include="Migrations\201703071318507_Ititial.Designer.cs">
@@ -91,6 +95,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201703071318507_Ititial.resx">
       <DependentUpon>201703071318507_Ititial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703241049342_recreat.resx">
+      <DependentUpon>201703241049342_recreat.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

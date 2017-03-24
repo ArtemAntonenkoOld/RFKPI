@@ -9,8 +9,14 @@ using System.Threading.Tasks;
 namespace RKE.Entity
 {
     [Table("tbGroup")]
-    public sealed class Group
+    public  partial class Group
     {
+        public Group()
+        {
+            this.LessonsForExternalStudents =new HashSet<LessonForExternalStudents>();
+            this.Weeks =new HashSet<Week>();
+            this.Session = new HashSet<Session>();
+        }
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         [Column("cId")]
@@ -21,8 +27,8 @@ namespace RKE.Entity
         public string RozkladLink { get; set; }
         public int Type { get; set; }
 
-        public ICollection<LessonForExternalStudents> LessonForExternalStudents { get; set; }
-        public ICollection<Week> Weeks { get; set; }
-        public ICollection<Session> Session { get; set; }
+        public virtual ICollection<LessonForExternalStudents> LessonsForExternalStudents { get; set; }
+        public virtual ICollection<Week> Weeks { get; set; }
+        public virtual ICollection<Session> Session { get; set; }
     }
 }

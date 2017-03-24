@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace RKE.Entity
 {
     [Table("tbSession")]
-    public class Session
+    public  partial class Session
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
@@ -19,7 +19,8 @@ namespace RKE.Entity
         public string Aud { get; set; }
         [Column("cNumberOfLesson")]
         public int NumberOfLesson { get; set; }
-        public Group Group { get; set; }
-        public Teacher Teacher { get; set; }
+
+        public virtual Group Group { get; set; }
+        public virtual Teacher Teacher { get; set; }
     }
 }

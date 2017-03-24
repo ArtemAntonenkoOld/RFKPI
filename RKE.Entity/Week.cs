@@ -6,15 +6,21 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace RKE.Entity
 {
     [Table("tbWeek")]
-    public sealed class Week
+    public  partial class Week
     {
+        public Week()
+        {
+            this.Lessons = new HashSet<Lesson>();
+           
+        }
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         [Column("cId")]
         public int Id { get; set; }
         [Column("cNumberOfWeek")]
         public int NumberOfWeek { get; set; }
-        public ICollection<Lesson> Lessons { get; set; }
-        public Group Group { get; set; }
+
+        public virtual ICollection<Lesson> Lessons { get; set; }
+        public virtual Group Group { get; set; }
     }
 }

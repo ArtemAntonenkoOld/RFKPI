@@ -10,9 +10,14 @@ namespace RKE.Entity
 {
     [Table("tbTeacher")]
     
-    public sealed class Teacher
+    public  partial class Teacher
     {
-
+        public Teacher()
+        {
+            this.Lessons = new HashSet<Lesson>();
+            this.LessonsForExternalStudents = new HashSet<LessonForExternalStudents>();
+            this.Session = new HashSet<Session>();
+        }
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         [Column("cId")]
@@ -29,8 +34,8 @@ namespace RKE.Entity
         [Column("cLink")]
         public string Link { get; set; }
         
-        public ICollection<Lesson> Lessons { get; set; }
-        public ICollection<LessonForExternalStudents> ExternalGroup { get; set; }
-        public ICollection<Session> Session { get; set; }
+        public virtual ICollection<Lesson> Lessons { get; set; }
+        public virtual ICollection<LessonForExternalStudents> LessonsForExternalStudents { get; set; }
+        public virtual ICollection<Session> Session { get; set; }
     }
 }

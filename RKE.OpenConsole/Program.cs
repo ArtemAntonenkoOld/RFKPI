@@ -12,8 +12,7 @@ namespace RKE.OpenConsole
     {
         static void Main(string[] args)
         {
-           
-            
+         
         }
     }
 }
