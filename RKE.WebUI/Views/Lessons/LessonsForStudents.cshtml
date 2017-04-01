@@ -1,16 +1,62 @@
-﻿@model List<RKE.UIModels.RozkladModel.RozkladModel>
+﻿@{ Layout = "_LayoutForLessons.cshtml";}
 
-<div>
-    <h4>RozkladModel</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.FirstOrDefault().GroupName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FirstOrDefault().GroupName)
-        </dd>
-
-    </dl>
+<div class="container">
+    <table class="table table-responsive table-striped table-bordered ">
+        <tbody>
+            <tr>
+                <td></td>
+                <td>Понеділок</td>
+                <td>Вівторок</td>
+                <td>Середа</td>
+                <td>Четвер</td>
+                <td>П'ятниця</td>
+                <td>Субота</td>
+            </tr>
+            <tr>
+                <td>1<br>08:30</td>
+                <td class="day_backlight"><span class="disLabel"><a class="plainLink" href="http://wiki.kpi.ua/index.php/Фізичне виховання_(20103570)" title="Фізичне виховання">ФП</a></span><br><br></td>
+                <td class="closest_pair"><span class="disLabel"><a class="plainLink" href="http://wiki.kpi.ua/index.php/Іноземна мова-1. Вступ до загальнотехнотехнічної іноземної мови_(20102880)" title="Іноземна мова-1. Вступ до загальнотехнотехнічної іноземної мови">Ін. мова-1.Вступ</a></span><br><a class="plainLink" href="/Schedules/ViewSchedule.aspx?v=56f07230-24c7-4819-8f25-eef36aa5cb4e" title="викладач Бондаренко Олександра Ігорівна">вик. Бондаренко О. І.</a><br><a class="plainLink" href="http://maps.google.com?q=50.447021,30.456021">518-18 Прак</a></td>
+                <td><span class="disLabel"><a class="plainLink" href="http://wiki.kpi.ua/index.php/Іноземна мова-1. Вступ до загальнотехнотехнічної іноземної мови_(20102880)" title="Іноземна мова-1. Вступ до загальнотехнотехнічної іноземної мови">Ін. мова-1.Вступ</a></span><br><a class="plainLink" href="/Schedules/ViewSchedule.aspx?v=e4882e95-01aa-4f5f-904c-1dc67efb8607" title="старший викладач Шевченко Ольга Миколаївна">ст.вик. Шевченко О. М.</a><br><a class="plainLink" href="http://maps.google.com?q=50.447021,30.456021">531-18 Прак</a></td>
+                <td></td>
+                <td><span class="disLabel"><a class="plainLink" href="http://wiki.kpi.ua/index.php/Вища математика - 2. Диф. та інтегр. числення функцій багатьох змінних_(20103240)" title="Вища математика - 2. Диф. та інтегр. числення функцій багатьох змінних">В. математика 2</a></span><br><a class="plainLink" href="/Schedules/ViewSchedule.aspx?v=6804eee4-9c59-4c1d-9909-676cbb760f3c" title="доцент Коваленко Валентина Федорівна">доц. Коваленко В. Ф.</a><br><a class="plainLink" href="http://maps.google.com?q=50.447021,30.456021">339-18 Лек</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>2<br>10:25</td>
+                <td class="day_backlight"><span class="disLabel"><a class="plainLink" href="http://wiki.kpi.ua/index.php/Вища математика - 2. Диф. та інтегр. числення функцій багатьох змінних_(20103240)" title="Вища математика - 2. Диф. та інтегр. числення функцій багатьох змінних">В. математика 2</a></span><br><a class="plainLink" href="/Schedules/ViewSchedule.aspx?v=50b35d5a-137a-41c1-9485-c116e65db695" title="асистент Сиротенко Антон Володимирович">ас. Сиротенко А. В.</a><br><a class="plainLink" href="http://maps.google.com?q=50.447021,30.456021">203-18 Прак</a></td>
+                <td><span class="disLabel"><a class="plainLink" href="http://wiki.kpi.ua/index.php/Спецрозділи математики-2. Чисельні методи_(20102010)" title="Спецрозділи математики-2. Чисельні методи">Осн.дискр.матем.</a></span><br><a class="plainLink" href="/Schedules/ViewSchedule.aspx?v=00af00c8-eee7-4ba8-b5a4-738bae87dc41" title="професор Дорошенко Анатолій Юхимович">проф. Дорошенко А. Ю.</a><br><a class="plainLink" href="http://maps.google.com?q=50.447021,30.456021">209а-18 1,5 Лек</a></td>
+                <td><span class="disLabel"><a class="plainLink" href="http://wiki.kpi.ua/index.php/Фізика  - 1. Механіка_(20103220)" title="Фізика  - 1. Механіка">Фізика 1</a></span><br><a class="plainLink" href="/Schedules/ViewSchedule.aspx?v=dc698c37-06fe-4dbf-9a2e-20079d529ecf" title="доцент Бродин Олександр Михайлович">доц. Бродин О. М.</a><br><a class="plainLink" href="http://maps.google.com?q=50.447021,30.456021">339-18 Лек</a></td>
+                <td><span class="disLabel"><a class="plainLink" href="http://wiki.kpi.ua/index.php/Теорія алгоритмів_(20102010)" title="Теорія алгоритмів">ТЕОР. алг.</a></span><br><a class="plainLink" href="/Schedules/ViewSchedule.aspx?v=4ae7f846-9283-4802-9940-7c82bea8d47d" title="зав.кафедрою Теленик Сергій Федорович">зав.каф. Теленик С. Ф.</a><br><a class="plainLink" href="http://maps.google.com?q=50.447021,30.456021">339-18 Лек</a></td>
+                <td><span class="disLabel"><a class="plainLink" href="http://wiki.kpi.ua/index.php/Теорія алгоритмів_(20102010)" title="Теорія алгоритмів">ТЕОР. алг.</a></span><br><a class="plainLink" href="/Schedules/ViewSchedule.aspx?v=0219fc0c-9756-4094-8b6a-8d41de483142" title="асистент Март Богдан Анатолійович">ас. Март Б. А.</a><br><a class="plainLink" href="http://maps.google.com?q=50.447021,30.456021">533-18 1,5 Лаб</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>3<br>12:20</td>
+                <td class="day_backlight"><span class="disLabel"><a class="plainLink" href="http://wiki.kpi.ua/index.php/Програмування - 2.Об'єктно-орієнтовне програмування_(20102010)" title="Програмування - 2.Об'єктно-орієнтовне програмування">Об.орієнт.прогр.</a></span><br><a class="plainLink" href="/Schedules/ViewSchedule.aspx?v=b43dc4cb-2c8e-49ea-a25c-73d0d6d375a7" title="старший викладач Хмелюк Володимир Сергійович">ст.вик. Хмелюк В. С.</a><br><a class="plainLink" href="http://maps.google.com?q=50.4459415,30.4547315">706-22 Лек</a></td>
+                <td><span class="disLabel"><a class="plainLink" href="http://wiki.kpi.ua/index.php/Спецрозділи математики-2. Чисельні методи_(20102010)" title="Спецрозділи математики-2. Чисельні методи">Осн.дискр.матем.</a></span><br><a class="plainLink" href="/Schedules/ViewSchedule.aspx?v=b62429e2-150e-4bbc-81ee-02d78208f582" title="старший викладач Дорошенко Катерина Сергіївна">ст.вик. Дорошенко К. С.</a><br><a class="plainLink" href="http://maps.google.com?q=50.447021,30.456021">-18 1,5 Лаб</a></td>
+                <td><span class="disLabel"><a class="plainLink" href="http://wiki.kpi.ua/index.php/Фізика  - 1. Механіка_(20103220)" title="Фізика  - 1. Механіка">Фізика 1</a></span><br><a class="plainLink" href="/Schedules/ViewSchedule.aspx?v=dc698c37-06fe-4dbf-9a2e-20079d529ecf" title="доцент Бродин Олександр Михайлович">доц. Бродин О. М.</a><br><a class="plainLink" href="http://maps.google.com?q=50.447021,30.456021">207-18 Прак</a></td>
+                <td><span class="disLabel"><a class="plainLink" href="http://wiki.kpi.ua/index.php/Промислова екологія_(20101350)" title="Промислова екологія">Екологія</a></span><br><a class="plainLink" href="/Schedules/ViewSchedule.aspx?v=46b2ac78-6990-4a1c-83be-01326df1d277" title="доцент Сіренко Людмила Вікторівна">доц. Сіренко Л. В.</a><br><a class="plainLink" href="http://maps.google.com?q=50.447021,30.456021">228-18 Прак</a></td>
+                <td><span class="disLabel"><a class="plainLink" href="http://wiki.kpi.ua/index.php/Фізичне виховання_(20103570)" title="Фізичне виховання">ФП</a></span><br><br></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>4<br>14:15</td>
+                <td class="day_backlight"><span class="disLabel"><a class="plainLink" href="http://wiki.kpi.ua/index.php/Програмування - 2.Об'єктно-орієнтовне програмування_(20102010)" title="Програмування - 2.Об'єктно-орієнтовне програмування">Об.орієнт.прогр.</a></span><br><a class="plainLink" href="/Schedules/ViewSchedule.aspx?v=2e9f2c75-20e4-47a8-ae34-6d5dd79ac8cb" title="старший викладач Хмелюк Марина Сергіївна">ст.вик. Хмелюк М. С.</a><br><a class="plainLink" href="http://maps.google.com?q=50.447021,30.456021">518-18 Лаб</a></td>
+                <td><span class="disLabel"><a class="plainLink" href="http://wiki.kpi.ua/index.php/Операційні системи -2. Адміністрування ОС_(20102010)" title="Операційні системи -2. Адміністрування ОС">Опер.сист.</a></span><br><a class="plainLink" href="/Schedules/ViewSchedule.aspx?v=1eea73f2-9f6d-41d0-97ae-49f444dbfce1" title="доцент Дорогий Ярослав Юрійович">доц. Дорогий Я. Ю.</a><br><a class="plainLink" href="http://maps.google.com?q=50.4480855,30.4585595">511-19 Лек</a></td>
+                <td></td>
+                <td><span class="disLabel"><a class="plainLink" href="http://wiki.kpi.ua/index.php/Промислова екологія_(20101350)" title="Промислова екологія">Екологія</a></span><br><a class="plainLink" href="/Schedules/ViewSchedule.aspx?v=46b2ac78-6990-4a1c-83be-01326df1d277" title="доцент Сіренко Людмила Вікторівна">доц. Сіренко Л. В.</a><br><a class="plainLink" href="http://maps.google.com?q=50.447021,30.456021">306-18 Лек</a></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>5<br>16:10</td>
+                <td class="day_backlight"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
 </div>

@@ -55,6 +55,7 @@
     <Compile Include="Migrations\201703241049342_recreat.Designer.cs">
       <DependentUpon>201703241049342_recreat.cs</DependentUpon>
     </Compile>
+    <Compile Include="Repositories\TeacherRepository.cs" />
     <Compile Include="SampleTest.cs" />
     <Compile Include="Migrations\201703071318507_Ititial.cs" />
     <Compile Include="Migrations\201703071318507_Ititial.Designer.cs">
@@ -65,8 +66,7 @@
     <Compile Include="Repositories\GenericRepository.cs" />
     <Compile Include="Repositories\SessionRepository.cs" />
     <Compile Include="Repositories\LessonRepository.cs" />
-    <Compile Include="Repositories\ExternalStudentsGroup.cs" />
-    <Compile Include="Repositories\LessonForExternalStudent.cs" />
+    <Compile Include="Repositories\LessonForExternalStudentRepository.cs" />
     <Compile Include="Repositories\GroupRepository.cs" />
     <Compile Include="Repositories\WeekRepository.cs" />
   </ItemGroup>

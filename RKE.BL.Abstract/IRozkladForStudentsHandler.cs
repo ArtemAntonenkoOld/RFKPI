@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using RKE.UIModels.RozkladModel;
+using RKE.UIModels.RozkladModelForStudents;
+using RKE.ViewModels.RozkladModelsForTeachers;
 
 namespace RKE.BL.Abstract
 {
-    public interface IRozkladDataHandler
+    public interface IRozkladForStudentsHandler
     {
-        //  Task<List<RozkladModel>> GetByGroup(string groupName);
         Task<List<RozkladModel>> GetByGroup(string groupName);
-        // Task<RozkladModel> GetByGroup(string groupName,int week);
+        Task<RozkladForTeachersModel> GetByNameOfTeacher(string teacherName);
     }
 }

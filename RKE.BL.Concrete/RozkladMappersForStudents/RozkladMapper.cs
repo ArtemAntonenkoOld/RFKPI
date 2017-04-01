@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RKE.Entity;
-using RKE.UIModels.RozkladModel;
+using RKE.UIModels.RozkladModelForStudents;
 
-namespace RKE.BL.Concrete.Mappers
+namespace RKE.BL.Concrete.RozkladMappersForStudents
 {
     public class RozkladMapper
     {

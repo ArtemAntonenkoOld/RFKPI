@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using RKE.Entity;
-using RKE.UIModels.RozkladModel;
+using RKE.UIModels.RozkladModelForStudents;
 
-namespace RKE.BL.Concrete.Mappers
+namespace RKE.BL.Concrete.RozkladMappersForStudents
 {
-    public class LessonMapper
+    public class LessonForStudentsMapper
     {
         public List<LessonModel> EntityToModel(List<Lesson> entity)
         {
@@ -18,6 +18,7 @@ namespace RKE.BL.Concrete.Mappers
                     Id = temp.Id,
                     NumberOfLesson = temp.NumberOfLesson,
                     Type = temp.Type
+                    
             });
         }
             return p;

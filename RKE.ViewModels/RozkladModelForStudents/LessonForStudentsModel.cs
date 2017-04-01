@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace RKE.UIModels.RozkladModel
+namespace RKE.UIModels.RozkladModelForStudents
 {
     public class LessonModel
     {

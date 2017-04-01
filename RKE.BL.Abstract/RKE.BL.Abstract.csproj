@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IMapper.cs" />
-    <Compile Include="IRozkladDataHandler.cs" />
+    <Compile Include="IRozkladForStudentsHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

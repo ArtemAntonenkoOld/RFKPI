@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RKE.UIModels.RozkladModel
+namespace RKE.UIModels.RozkladModelForStudents
 {
     public class RozkladModel
     {

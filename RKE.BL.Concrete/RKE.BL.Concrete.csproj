@@ -41,11 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataBind\RozkladDataHandler.cs" />
-    <Compile Include="Mappers\LessonMapper.cs" />
-    <Compile Include="Mappers\RozkladMapper.cs" />
-    <Compile Include="Mappers\WeekMapper.cs" />
+    <Compile Include="DataBind\RozkladForStudentsHandler.cs" />
+    <Compile Include="RozkladMappersForStudents\LessonForStudentsMapper.cs" />
+    <Compile Include="RozkladMappersForStudents\RozkladMapper.cs" />
+    <Compile Include="RozkladMappersForStudents\WeekMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RozkladMappersForTeachers\LessinsForStudentsMapper.cs" />
+    <Compile Include="RozkladMappersForTeachers\LessonsForExternalStudentsMapper.cs" />
+    <Compile Include="RozkladMappersForTeachers\RozkladMapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RKE.BL.Abstract\RKE.BL.Abstract.csproj">

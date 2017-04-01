@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using RKE.BL.Abstract;
-using RKE.UIModels.RozkladModel;
+using RKE.UIModels.RozkladModelForStudents;
 
 namespace RKE.WebUI.Controllers
 {

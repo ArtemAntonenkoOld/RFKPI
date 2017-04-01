@@ -1,15 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using RKE.Entity;
-using RKE.UIModels.RozkladModel;
+using RKE.UIModels.RozkladModelForStudents;
 
-namespace RKE.BL.Concrete.Mappers
+namespace RKE.BL.Concrete.RozkladMappersForStudents
 {
     public class WeekMapper
     {
         public List<WeekModel> EntityToModel(List<Week> entity)
         {
-            LessonMapper _lessonMapper = new LessonMapper();
+            LessonForStudentsMapper _lessonMapper = new LessonForStudentsMapper();
             List<WeekModel> p = new List<WeekModel>();
             foreach (var item in entity)
             {

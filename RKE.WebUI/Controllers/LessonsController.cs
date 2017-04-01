@@ -8,14 +8,15 @@ using System.Web.Mvc;
 using Castle.Core.Internal;
 using Castle.MicroKernel.ModelBuilder.Descriptors;
 using RKE.BL.Abstract;
-using RKE.UIModels.RozkladModel;
+using RKE.UIModels.RozkladModelForStudents;
+using RKE.ViewModels.RozkladModelsForTeachers;
 
 namespace RKE.WebUI.Controllers
 {
     public class LessonsController : Controller
     {
-        private readonly IRozkladDataHandler _logic;
-        public LessonsController(IRozkladDataHandler logic)
+        private readonly IRozkladForStudentsHandler _logic;
+        public LessonsController(IRozkladForStudentsHandler logic)
         {
             _logic = logic;
         }
@@ -33,7 +34,8 @@ namespace RKE.WebUI.Controllers
                 }
                 else if (match.IsNullOrEmpty())
                 {
-                    return View("LessonsForTeachers");
+                    RozkladForTeachersModel re = await _logic.GetByNameOfTeacher(text);
+                    return View("LessonsForTeachers",re);
                 }
                 else
                 {
