@@ -16,10 +16,11 @@ namespace RKE.BL.Concrete.RozkladMappersForStudents
             List<RozkladModel> p = new List<RozkladModel>();
             foreach (var item in entity)
             {
-                RozkladModel l = new RozkladModel();
-                l.GroupName = item.NameOfGroup;
-                l.WeekModel = _weekMapper.EntityToModel(item.Weeks.ToList());
-            p.Add(l);
+                p.Add(new RozkladModel()
+                {
+                    GroupName = item.NameOfGroup,
+                    WeekModel = _weekMapper.EntityToModel(item.Weeks.ToList())
+                });
             }
             return p;
             }

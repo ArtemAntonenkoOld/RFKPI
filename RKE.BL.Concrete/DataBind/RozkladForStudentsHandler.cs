@@ -20,35 +20,32 @@ namespace RKE.BL.Concrete.DataBind
     {
        // private readonly ITeacherRepository _teacherRepository;
         private readonly IGroupRepository _groupRepository;
-        private readonly IWeekRepository _weekRepository;
-        private readonly ILessonRepository _lessonRepository;
         private readonly ITeacherRepository _teacherRepository;
 
         public RozkladForStudentsDataHandler(
             IGroupRepository groupRepository,
-            IWeekRepository weekRepository,
-            ILessonRepository lessonRepository,
             ITeacherRepository teacherRepository
          )
         {
             _groupRepository = groupRepository;
-            _weekRepository = weekRepository;
-            _lessonRepository = lessonRepository;
             _teacherRepository = teacherRepository;
         }
 
-        public async Task<List<RozkladModel>> GetByGroup(string groupName)
+        public async Task<RozkladModel> GetByGroup(string groupName)
         {
 
             List<Group> res = await _groupRepository.FetchByAsync(p => p.NameOfGroup == groupName);
             RozkladMapper mapper = new RozkladMapper();
-            return mapper.EntityToModel(res);
+            List<RozkladModel> result = mapper.EntityToModel(res);
+            return result.FirstOrDefault();
         }
+
         public async Task<RozkladForTeachersModel> GetByNameOfTeacher(string teacherName)
         {
             List<Teacher> res = await _teacherRepository.FetchByAsync(p => p.FullName == teacherName && p.ShortName == teacherName);
             RozkladMappersForTeachers.RozkladMapper mapper = new RozkladMappersForTeachers.RozkladMapper();
-            return mapper.EntityToModel(res);
+            List<RozkladForTeachersModel> result = mapper.EntityToModel(res);
+            return result.FirstOrDefault();
         }
         
 

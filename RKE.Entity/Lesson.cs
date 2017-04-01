@@ -18,6 +18,8 @@ namespace RKE.Entity
         public string Aud { get; set; }
         [Column("cType")]
         public string Type { get; set; }
+        [Column("cNameOfLesson")]
+        public string NameOfLesson { get; set; }
 
         public virtual Teacher Teacher { get; set; }
         public virtual Week Week { get; set; }

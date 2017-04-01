@@ -35,11 +35,11 @@ namespace RKE.WebUI.Controllers
                 else if (match.IsNullOrEmpty())
                 {
                     RozkladForTeachersModel re = await _logic.GetByNameOfTeacher(text);
-                    return View("LessonsForTeachers",re);
+                    return View("LessonsForTeachers");
                 }
                 else
                 {
-                    List<RozkladModel> re = await _logic.GetByGroup(text);
+                    RozkladModel re = await _logic.GetByGroup(text);
                    
                     return View("LessonsForStudents", re);
 

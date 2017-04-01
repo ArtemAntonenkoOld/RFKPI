@@ -10,15 +10,13 @@ namespace RKE.BL.Concrete.RozkladMappersForTeachers
 {
     public class RozkladMapper
     {
-        public RozkladForTeachersModel EntityToModel(List<Teacher> entity)
+        public List<RozkladForTeachersModel> EntityToModel(List<Teacher> entity)
         {
             LessonsForExternalStudentsMapper _lessonsForExternalStudentsMapper = new LessonsForExternalStudentsMapper();
             LessonsForStudentsMapper _lessonsForStudentsMapper = new LessonsForStudentsMapper();
             List<RozkladForTeachersModel> l=new List<RozkladForTeachersModel>();
             foreach (var temp in entity)
             {
-
-
                 l.Add(new RozkladForTeachersModel()
                 {
                     FullName = temp.FullName,
@@ -29,7 +27,7 @@ namespace RKE.BL.Concrete.RozkladMappersForTeachers
 
                 });
             }
-            return l.FirstOrDefault();
+            return l;
         }
 
     }

@@ -5,6 +5,6 @@ namespace RKE.UIModels.RozkladModelForStudents
     public class WeekModel
     {
         public int NumberOfWeek { get; set; }
-        public List<LessonModel> LessonModel { get; set; }
+        public LessonModel[][] LessonModel { get; set; }
     }
 }
