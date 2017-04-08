@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RKE.Entity;
-using RKE.ViewModels.RozkladModelsForTeachers;
+using RKE.UIModels.RozkladModelsForTeachers;
 
 namespace RKE.BL.Concrete.RozkladMappersForTeachers
 {

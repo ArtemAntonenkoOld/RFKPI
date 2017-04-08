@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace RKE.UIModels.RozkladModelForStudents
 {
-    public class RozkladModel
+    public class RozkladModelForStudentsRozkladModel
+        
     {
         public string GroupName { get; set; }
-        public List<WeekModel> WeekModel { get; set; }
-      
+        public List<RozkladModelForStudentsWeekModel> WeekModel { get; set; }
     }
 
     

@@ -4,19 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RKE.Entity;
-using RKE.ViewModels.RozkladModelsForTeachers;
+using RKE.UIModels.RozkladModelsForTeachers;
 
 namespace RKE.BL.Concrete.RozkladMappersForTeachers
 {
     public class LessonsForExternalStudentsMapper
     {
-        public List<LessonForExternalStudentsForTeachersModel> EntityToModel(List<LessonForExternalStudents> entity)
+        public List<RozkladModelForTeachersLessonsModel> EntityToModel(List<LessonForExternalStudents> entity)
         {
 
-            List<LessonForExternalStudentsForTeachersModel> l = new List<LessonForExternalStudentsForTeachersModel>();
+            List<RozkladModelForTeachersLessonsModel> l = new List<RozkladModelForTeachersLessonsModel>();
             foreach (var temp in entity)
             {
-                l.Add(new LessonForExternalStudentsForTeachersModel()
+                l.Add(new RozkladModelForTeachersLessonsModel()
                 {
                     Group = temp.Group.NameOfGroup,
                     Aud = temp.Aud,

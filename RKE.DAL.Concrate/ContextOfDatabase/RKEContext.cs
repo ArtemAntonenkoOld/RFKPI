@@ -19,8 +19,7 @@ namespace RKE.DAL.Concrate.ContextOfDatabase
         public RKEContext()
             : base("name=RKEDatabaseConnectionString") { 
             Database.SetInitializer<RKEContext>(new CreateDatabaseIfNotExists<RKEContext>());
-
-        
+            
         }
 
         public IDbSet<Lesson> Lesson { get; set; }

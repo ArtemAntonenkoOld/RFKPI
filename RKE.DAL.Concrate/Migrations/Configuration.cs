@@ -9,7 +9,7 @@ namespace RKE.DAL.Concrate.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(RKE.DAL.Concrate.ContextOfDatabase.RKEContext context)

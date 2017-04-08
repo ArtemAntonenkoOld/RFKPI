@@ -7,7 +7,7 @@
     <ProjectGuid>{67E8D9E2-CDA5-430F-A707-8608FB1474D7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RKE.ViewModels</RootNamespace>
+    <RootNamespace>RKE.UIModels</RootNamespace>
     <AssemblyName>RKE.UIModels</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -41,13 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RozkladModelsForTeachers\LessonForExternalStudentsForTeachersModel.cs" />
-    <Compile Include="RozkladModelsForTeachers\LessonForTeachersModel.cs" />
-    <Compile Include="RozkladModelsForTeachers\RozkladForTeachersModel.cs" />
-    <Compile Include="RozkladModelForStudents\LessonForStudentsModel.cs" />
-    <Compile Include="RozkladModelForStudents\RozkladForStudentsModel.cs" />
+    <Compile Include="RozkladModelForExternalStudents\RozkladModelForExternalStudentsLessonsForExternalStudentsModel.cs" />
+    <Compile Include="RozkladModelForExternalStudents\RozkladModelForExternalStudentsRozkladModel.cs" />
+    <Compile Include="RozkladModelForTeachers\RozkladModelForTeachersLessonsModel.cs" />
+    <Compile Include="RozkladModelForTeachers\LessonForTeachersModel.cs" />
+    <Compile Include="RozkladModelForTeachers\RozkladModelForTeachersTeacherModel.cs" />
+    <Compile Include="RozkladModelForStudents\RozkladModelForStudentsLessonModel.cs" />
+    <Compile Include="RozkladModelForStudents\RozkladModelForStudentsRozkladModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RozkladModelForStudents\WeekForStudentsModel.cs" />
+    <Compile Include="RozkladModelForStudents\RozkladModelForStudentsWeekModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

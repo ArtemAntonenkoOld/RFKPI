@@ -51,16 +51,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContextOfDatabase\RKEContext.cs" />
-    <Compile Include="Migrations\201703241049342_recreat.cs" />
-    <Compile Include="Migrations\201703241049342_recreat.Designer.cs">
-      <DependentUpon>201703241049342_recreat.cs</DependentUpon>
-    </Compile>
     <Compile Include="Repositories\TeacherRepository.cs" />
     <Compile Include="SampleTest.cs" />
-    <Compile Include="Migrations\201703071318507_Ititial.cs" />
-    <Compile Include="Migrations\201703071318507_Ititial.Designer.cs">
-      <DependentUpon>201703071318507_Ititial.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
@@ -91,14 +83,6 @@
       <Project>{b21a4048-f59c-428b-8372-20139c32f17a}</Project>
       <Name>RKE.IOC.Manager</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201703071318507_Ititial.resx">
-      <DependentUpon>201703071318507_Ititial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703241049342_recreat.resx">
-      <DependentUpon>201703241049342_recreat.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

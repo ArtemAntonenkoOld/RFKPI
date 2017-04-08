@@ -41,10 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataBind\RozkladForStudentsHandler.cs" />
-    <Compile Include="RozkladMappersForStudents\LessonForStudentsMapper.cs" />
-    <Compile Include="RozkladMappersForStudents\RozkladMapper.cs" />
-    <Compile Include="RozkladMappersForStudents\WeekMapper.cs" />
+    <Compile Include="DataBind\RozkladHandler.cs" />
+    <Compile Include="RozkladMappersForExternalStudents\RozkladMapperForExternalStudentsLessonMapper.cs" />
+    <Compile Include="RozkladMappersForExternalStudents\RozkladMapperForExternalStudentsRozkladMapper.cs" />
+    <Compile Include="RozkladMappersForStudents\RozkladMapperForStudentsLessonMapper.cs" />
+    <Compile Include="RozkladMappersForStudents\RozkladMapperForStudentsRozkladMapper.cs" />
+    <Compile Include="RozkladMappersForStudents\RozkladMapperForStudentsWeekMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RozkladMappersForTeachers\LessinsForStudentsMapper.cs" />
     <Compile Include="RozkladMappersForTeachers\LessonsForExternalStudentsMapper.cs" />
@@ -80,7 +82,9 @@
       <Name>RKE.UIModels</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="UpdateBind\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

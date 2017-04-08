@@ -4,27 +4,29 @@ using RKE.UIModels.RozkladModelForStudents;
 
 namespace RKE.BL.Concrete.RozkladMappersForStudents
 {
-    public class LessonForStudentsMapper
+    public class RozkladMapperForStudentsLessonMapper
     {
-        public LessonModel[][] EntityToModel(List<Lesson> entity)
+        public RozkladModelForStudentsLessonModel[][] EntityToModel(List<Lesson> entity)
         {
-            List<LessonModel> p = new List<LessonModel>();
+            List<RozkladModelForStudentsLessonModel> p = new List<RozkladModelForStudentsLessonModel>();
             foreach (var temp in entity)
             {
-                p.Add(new LessonModel()
+                p.Add(new RozkladModelForStudentsLessonModel()
                 {
                     Day = temp.Day,
                     Aud = temp.Aud,
                     Id = temp.Id,
                     NumberOfLesson = temp.NumberOfLesson,
-                    Type = temp.Type
+                    Type = temp.Type,
+                    NameOfTeacher = temp.Teacher.FullName,
+                    NameOfLesson = temp.NameOfLesson
 
                 });
             }
-            LessonModel[][] obj = new LessonModel[6][];
+            RozkladModelForStudentsLessonModel[][] obj = new RozkladModelForStudentsLessonModel[6][];
                 for (int i = 0; i < 6; i++)
                 {
-                    obj[i] = new LessonModel[6];
+                    obj[i] = new RozkladModelForStudentsLessonModel[7];
                 }
             
                 foreach (var item in p)

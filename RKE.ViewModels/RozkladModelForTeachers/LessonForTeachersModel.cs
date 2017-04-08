@@ -1,4 +1,4 @@
-﻿namespace RKE.ViewModels.RozkladModelsForTeachers
+﻿namespace RKE.UIModels.RozkladModelsForTeachers
 {
     public class LessonForTeachersModel
     {
