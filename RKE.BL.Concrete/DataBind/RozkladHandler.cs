@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RKE.BL.Concrete.RozkladMappersForStudents;
+using RKE.BL.Concrete.RozkladMappersForTeachers;
 using RKE.UIModels.RozkladModelForStudents;
 using RKE.DAL.Concrate.Repositories;
 using RKE.DAL.Abstract.Repositories;
@@ -38,11 +39,11 @@ namespace RKE.BL.Concrete.DataBind
             List<RozkladModelForStudentsRozkladModel> result = mapper.EntityToModel(res);
             return result.FirstOrDefault();
         }
-        public async Task<RozkladModelForTeachersTeacherModel> GetByNameOfTeacher(string teacherName)
+        public async Task<RozkladModelForTeachersRozkladModel> GetByNameOfTeacher(string teacherName)
         {
             List<Teacher> res = await _teacherRepository.FetchByAsync(p => p.FullName == teacherName && p.ShortName == teacherName);
-            RozkladMappersForTeachers.RozkladMapper mapper = new RozkladMappersForTeachers.RozkladMapper();
-            List<RozkladModelForTeachersTeacherModel> result = mapper.EntityToModel(res);
+            RozkladMapperForTeachersRozkladMapper mapper = new RozkladMapperForTeachersRozkladMapper();
+            List<RozkladModelForTeachersRozkladModel> result = mapper.EntityToModel(res);
             return result.FirstOrDefault();
         }
         public async Task<RozkladModelForExternalStudentsRozkladModel> GetByExternalGroup(string groupName)

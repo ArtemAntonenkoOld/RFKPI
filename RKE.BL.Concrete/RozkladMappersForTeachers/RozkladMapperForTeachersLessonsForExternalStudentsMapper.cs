@@ -8,15 +8,15 @@ using RKE.UIModels.RozkladModelsForTeachers;
 
 namespace RKE.BL.Concrete.RozkladMappersForTeachers
 {
-    public class LessonsForExternalStudentsMapper
+    public class RozkladMapperForTeachersLessonsForExternalStudentsMapper
     {
-        public List<RozkladModelForTeachersLessonsModel> EntityToModel(List<LessonForExternalStudents> entity)
+        public List<RozkladModelForTeachersLessonsForExternalStudentsModel> EntityToModel(List<LessonForExternalStudents> entity)
         {
 
-            List<RozkladModelForTeachersLessonsModel> l = new List<RozkladModelForTeachersLessonsModel>();
+            List<RozkladModelForTeachersLessonsForExternalStudentsModel> l = new List<RozkladModelForTeachersLessonsForExternalStudentsModel>();
             foreach (var temp in entity)
             {
-                l.Add(new RozkladModelForTeachersLessonsModel()
+                l.Add(new RozkladModelForTeachersLessonsForExternalStudentsModel()
                 {
                     Group = temp.Group.NameOfGroup,
                     Aud = temp.Aud,

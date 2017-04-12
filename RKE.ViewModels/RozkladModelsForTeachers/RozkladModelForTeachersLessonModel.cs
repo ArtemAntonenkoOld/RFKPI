@@ -1,6 +1,6 @@
 ﻿namespace RKE.UIModels.RozkladModelsForTeachers
 {
-    public class LessonForTeachersModel
+    public class RozkladModelForTeachersLessonModel
     {
         public int Day { get; set; }
         public int NumberOfLesson { get; set; }

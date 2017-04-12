@@ -28,6 +28,7 @@ namespace RKE.WebUI.Controllers
             {
                 Regex regex = new Regex(@"\d");
                 MatchCollection match = regex.Matches(text);
+
                 if (text.EndsWith("з"))
                 {
 
@@ -36,7 +37,8 @@ namespace RKE.WebUI.Controllers
                 }
                 else if (match.IsNullOrEmpty())
                 {
-                    RozkladModelForTeachersTeacherModel re = await _logic.GetByNameOfTeacher(text);
+                    RozkladModelForTeachersRozkladModel re = await _logic.GetByNameOfTeacher(text);
+
                     if (StringExtensions.IsNullOrEmpty(re))
                     {
                         return View("Index");
@@ -49,6 +51,7 @@ namespace RKE.WebUI.Controllers
                 else
                 {
                     RozkladModelForStudentsRozkladModel re = await _logic.GetByGroup(text);
+
                     if (StringExtensions.IsNullOrEmpty(re))
                     {
                         return View("Index");

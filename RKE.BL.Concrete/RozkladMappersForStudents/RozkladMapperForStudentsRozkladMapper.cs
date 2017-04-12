@@ -13,13 +13,17 @@ namespace RKE.BL.Concrete.RozkladMappersForStudents
         public List<RozkladModelForStudentsRozkladModel> EntityToModel(List<Group> entity)
         {
             RozkladMapperForStudentsWeekMapper rozkladMapperForStudentsWeekMapper = new RozkladMapperForStudentsWeekMapper();
+            RozkladMapperForStudentsSessionMapper rozkladMapperForStudentsSessionMapper = new RozkladMapperForStudentsSessionMapper();
             List<RozkladModelForStudentsRozkladModel> p = new List<RozkladModelForStudentsRozkladModel>();
             foreach (var item in entity)
             {
                 p.Add(new RozkladModelForStudentsRozkladModel()
                 {
                     GroupName = item.NameOfGroup,
-                    WeekModel = rozkladMapperForStudentsWeekMapper.EntityToModel(item.Weeks.ToList())
+                    
+                    WeekModel = rozkladMapperForStudentsWeekMapper.EntityToModel(item.Weeks.ToList()),
+                    SessionModel = rozkladMapperForStudentsSessionMapper.EntityToModel(item.Session.ToList()),
+
                 });
             }
             return p;

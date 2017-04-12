@@ -5,7 +5,7 @@
 @model RKE.UIModels.RozkladModelForStudents.RozkladModelForStudentsRozkladModel
 <div class="container">
     <div>@Model.GroupName</div>
-    <div class="col-md-9">
+    <div class="col-md-12">
         @foreach (var weekItem in @Model.WeekModel)
         {
             <table class="table table-responsive table-striped table-bordered ">
@@ -43,7 +43,7 @@
             </table>
         }
     </div>
-        <div class="col-md-3 table-responsive">
+        @*<div class="col-md-4 table-responsive">
                         <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -95,12 +95,12 @@
                                     
                                 </tr>
                                 <tr>
-                                                                        <td>ligula</td>
+                                    <td>ligula</td>
                                     <td>in</td>
                                     <td>libero</td>
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
+                    </div>*@
 </div>
         
