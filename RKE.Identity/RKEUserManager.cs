@@ -16,7 +16,7 @@ namespace RKE.Identity
         public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options,
                                                 IOwinContext context)
         {
-            RKEIdentityContext db = context.Get<RKEIdentityContext>();
+            RKEContext db = context.Get<RKEContext>();
             ApplicationUserManager manager = new ApplicationUserManager(new UserStore<User>(db));
             return manager;
         }

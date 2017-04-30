@@ -68,6 +68,18 @@ namespace RKE.WebUI.Controllers
             }
         }
 
-        
+        public async Task<ActionResult> Teacher(int id) {
+            RozkladModelForTeachersRozkladModel re = await _logic.GetByIdOfTeacher(id);
+
+            if (StringExtensions.IsNullOrEmpty(re))
+            {
+                return View("Index");
+            }
+            else
+            {
+                return View("LessonsForTeachers", re);
+            }
+
+        }
     }
 }

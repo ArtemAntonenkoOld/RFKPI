@@ -13,6 +13,8 @@ namespace RKE.BL.Abstract
     {
         Task<RozkladModelForExternalStudentsRozkladModel> GetByExternalGroup(string groupname);
         Task<RozkladModelForStudentsRozkladModel> GetByGroup(string groupName);
+
         Task<RozkladModelForTeachersRozkladModel> GetByNameOfTeacher(string teacherName);
+        Task<RozkladModelForTeachersRozkladModel> GetByIdOfTeacher(int id);
     }
 }

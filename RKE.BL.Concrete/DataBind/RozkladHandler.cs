@@ -46,6 +46,13 @@ namespace RKE.BL.Concrete.DataBind
             List<RozkladModelForTeachersRozkladModel> result = mapper.EntityToModel(res);
             return result.FirstOrDefault();
         }
+        public async Task<RozkladModelForTeachersRozkladModel> GetByIdOfTeacher(int id)
+        {
+            List<Teacher> res = await _teacherRepository.FetchByAsync(p => p.Id == id );
+            RozkladMapperForTeachersRozkladMapper mapper = new RozkladMapperForTeachersRozkladMapper();
+            List<RozkladModelForTeachersRozkladModel> result = mapper.EntityToModel(res);
+            return result.FirstOrDefault();
+        }
         public async Task<RozkladModelForExternalStudentsRozkladModel> GetByExternalGroup(string groupName)
         {
             List<Group> res = await _groupRepository.FetchByAsync(p => p.Type==1&&p.NameOfGroup==groupName);

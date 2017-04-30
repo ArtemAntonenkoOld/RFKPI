@@ -26,7 +26,9 @@ namespace RKE.WebUI
         private WebClient _dummy;
         public void Configuration(IAppBuilder app)
         {
-            app.CreatePerOwinContext<RKEIdentityContext>(RKEIdentityContext.Create);
+            app.CreatePerOwinContext<RKEContext>(RKEContext.Create);
+
+            app.CreatePerOwinContext<RKERoleManager>(RKERoleManager.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
             app.UseCookieAuthentication(new CookieAuthenticationOptions()
             {

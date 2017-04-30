@@ -86,7 +86,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IContextOfDatabase\IRKEIdentityContext.cs" />
     <Compile Include="IContextOfDatabase\IRKEContext.cs" />
     <Compile Include="IRepositories\IGenericRepository.cs" />
     <Compile Include="ISampleTest.cs" />
