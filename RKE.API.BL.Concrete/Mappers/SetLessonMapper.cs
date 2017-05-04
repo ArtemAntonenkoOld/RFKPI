@@ -12,17 +12,22 @@ namespace RKE.API.BL.Concrete.Mappers
     {
         public List<Lesson> ModelToEntity(List<ResultForAllLessonsModel> entity)
         {
+            SetLessonGroupMapper _lessonGroupMapper = new SetLessonGroupMapper();
             List<Lesson> p = new List<Lesson>();
             foreach (var temp in entity)
             {
                 p.Add(new Lesson()
                 {
-                    Aud = temp.rooms_full_names.FirstOrDefault(),
+                    ApiId=temp.id,
                     Day=temp.day,
-                    IsActive=true,
-                    NameOfLesson=temp.discipline_name,
+                    DisziplinApiId=temp.discipline,
+                    NumberOfLesson=temp.number,
+                    Week = temp.week,
+                    TeacherApiId=temp.teachers.FirstOrDefault(),
+                    AudApiId=temp.rooms.FirstOrDefault(),
+                    Groups=_lessonGroupMapper.EntityToModel(temp.groups)
                     
-                });
+                 });
             }
             return p;
         }

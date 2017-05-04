@@ -46,8 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AllAudsApiModels\ResultForAllAudsModel.cs" />
+    <Compile Include="AllAudsApiModels\RootObjectForAllAudsModel.cs" />
+    <Compile Include="AllDisziplinsApiModels\ResultForAllDisziplinsModel.cs" />
+    <Compile Include="AllDisziplinsApiModels\RootObjectForAllDisziplinsModel.cs" />
     <Compile Include="AllGroupsApiModels\ResultForAllGroupsModel.cs" />
     <Compile Include="AllGroupsApiModels\RootObjectForAllGroupsModel.cs" />
+    <Compile Include="AllLessonsApiModels\GroupForAllLessonModel.cs" />
     <Compile Include="AllLessonsApiModels\ResultForAllLessonsModel.cs" />
     <Compile Include="AllLessonsApiModels\RootObjectForAllLessonsModel.cs" />
     <Compile Include="AllTeachersApiModels\ResultForAllTeachersModel.cs" />

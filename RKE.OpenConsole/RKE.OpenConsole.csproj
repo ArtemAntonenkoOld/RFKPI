@@ -84,10 +84,6 @@
       <Project>{b3494e51-6785-431c-8ccc-ba1772618583}</Project>
       <Name>RKE.DAL.Concrate</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RKE.Entity\RKE.Entity.csproj">
-      <Project>{60b6292d-90c4-44da-8aa1-3c4e9ae9bf3f}</Project>
-      <Name>RKE.Entity</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RKE.Entity;
 using RKE.UIModels.RozkladModelForStudents;
+using RKE.Entity;
+using RKE.BL.Concrete.RozkladMappersForStudents;
 
 namespace RKE.BL.Concrete.RozkladMappersForStudents
 {
@@ -12,20 +10,34 @@ namespace RKE.BL.Concrete.RozkladMappersForStudents
     {
         public List<RozkladModelForStudentsRozkladModel> EntityToModel(List<Group> entity)
         {
-            RozkladMapperForStudentsWeekMapper rozkladMapperForStudentsWeekMapper = new RozkladMapperForStudentsWeekMapper();
+            RozkladMapperForStudentsLessonMapper rozkladMapperForStudentsLessonMapper = new RozkladMapperForStudentsLessonMapper();
             RozkladMapperForStudentsSessionMapper rozkladMapperForStudentsSessionMapper = new RozkladMapperForStudentsSessionMapper();
             List<RozkladModelForStudentsRozkladModel> p = new List<RozkladModelForStudentsRozkladModel>();
             foreach (var item in entity)
             {
-                p.Add(new RozkladModelForStudentsRozkladModel()
+                RozkladModelForStudentsRozkladModel k = new RozkladModelForStudentsRozkladModel();
+                List<Lesson> session=new List<Lesson>();
+                List<Lesson> lesson = new List<Lesson>(); ;
+                k.GroupName = item.NameOfGroup;
+                foreach (var lessonItem in item.Lessons)
                 {
-                    GroupName = item.NameOfGroup,
-                    
-                    WeekModel = rozkladMapperForStudentsWeekMapper.EntityToModel(item.Weeks.ToList()),
-                    SessionModel = rozkladMapperForStudentsSessionMapper.EntityToModel(item.Session.ToList()),
+                    if (lessonItem.TypeOfLesson != 5)
+                    {
+                        lesson.Add(lessonItem);
+                    }
+                    else
+                    {
+                        session.Add(lessonItem);
+                    }
+                }
+                k.LessonModel = rozkladMapperForStudentsLessonMapper.EntityToModel(lesson);
+                k.SessionModel = rozkladMapperForStudentsSessionMapper.EntityToModel(session);
+                p.Add(k);
 
-                });
+
             }
+
+        
             return p;
             }
 

@@ -44,14 +44,14 @@
     <Compile Include="FindGroupsModel\FindGroupsModel.cs" />
     <Compile Include="RozkladModelForExternalStudents\RozkladModelForExternalStudentsLessonsForExternalStudentsModel.cs" />
     <Compile Include="RozkladModelForExternalStudents\RozkladModelForExternalStudentsRozkladModel.cs" />
-    <Compile Include="RozkladModelForStudents\RozkladModelForStudentsSessionModel.cs" />
-    <Compile Include="RozkladModelsForTeachers\RozkladModelForTeachersLessonsForExternalStudentsModel.cs" />
+    <Compile Include="RozkladModelForStudents\RozkladModelForStudentsLessonModel.cs" />
+    <Compile Include="RozkladModelsForTeachers\GroupModelForTeachersModel.cs" />
+    <Compile Include="RozkladModelsForTeachers\RozkladModelForExternalStudentModel.cs" />
     <Compile Include="RozkladModelsForTeachers\RozkladModelForTeachersLessonModel.cs" />
     <Compile Include="RozkladModelsForTeachers\RozkladModelForTeachersRozkladModel.cs" />
-    <Compile Include="RozkladModelForStudents\RozkladModelForStudentsLessonModel.cs" />
+    <Compile Include="RozkladModelForStudents\RozkladModelForStudentsSessionModel.cs" />
     <Compile Include="RozkladModelForStudents\RozkladModelForStudentsRozkladModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RozkladModelForStudents\RozkladModelForStudentsWeekModel.cs" />
     <Compile Include="RozkladModelsForTeachers\RozkladModelForTeachersSessionModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

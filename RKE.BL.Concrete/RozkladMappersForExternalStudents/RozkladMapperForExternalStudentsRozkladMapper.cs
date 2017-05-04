@@ -20,7 +20,7 @@ namespace RKE.BL.Concrete.RozkladMappersForStudents
                 p.Add(new RozkladModelForExternalStudentsRozkladModel()
                 {
                     NameOfGroup = item.NameOfGroup,
-                    RozkladModelForExternalLessonsForExternalStudentsModel = rozkladMapperForExternalStudentsLessonMapper.EntityToModel(item.LessonsForExternalStudents.ToList())
+                    RozkladModelForExternalLessonsForExternalStudentsModel = rozkladMapperForExternalStudentsLessonMapper.EntityToModel(item.Lessons.ToList())
                 });
             }
             return p;

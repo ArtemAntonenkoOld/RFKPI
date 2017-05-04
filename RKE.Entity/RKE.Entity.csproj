@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{60B6292D-90C4-44DA-8AA1-3C4E9AE9BF3F}</ProjectGuid>
+    <ProjectGuid>{90C21925-1633-4510-A653-46BB0D641059}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RKE.Entity</RootNamespace>
     <AssemblyName>RKE.Entity</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -50,6 +49,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -58,16 +59,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Aud.cs" />
+    <Compile Include="Disziplin.cs" />
     <Compile Include="Group.cs" />
-    <Compile Include="Lesson.cs" />
     <Compile Include="LessonChanged.cs" />
-    <Compile Include="LessonForExternalStudents.cs" />
-    <Compile Include="Role.cs" />
-    <Compile Include="Session.cs" />
-    <Compile Include="Teacher.cs" />
+    <Compile Include="Lesson.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Role.cs" />
+    <Compile Include="Teacher.cs" />
     <Compile Include="User.cs" />
-    <Compile Include="Week.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

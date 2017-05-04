@@ -155,11 +155,6 @@ namespace RKE.WebUI.Controllers
             return View(model);
         }
 
-        [Authorize(Roles = "Teacher")]
-        public async Task<ActionResult> EditLessons()
-        {
-
-            return View();
-        }
+       
     }
 }

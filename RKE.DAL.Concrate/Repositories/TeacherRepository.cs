@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RKE.DAL.Abstract.IContextOfDatabase;
-using RKE.DAL.Abstract.Repositories;
+using RKE.DAL.Abstract.IRepositories;
 using RKE.Entity;
 
 namespace RKE.DAL.Concrate.Repositories

@@ -10,7 +10,7 @@ namespace RKE.BL.Concrete.RozkladMappersForTeachers
 {
     public class RozkladMapperForTeachersSessionMapper
     {
-        public List<RozkladModelForTeachersSessionModel> EntityToModel(List<Session> entity)
+        public List<RozkladModelForTeachersSessionModel> EntityToModel(List<Lesson> entity)
         {
           List<RozkladModelForTeachersSessionModel> l = new List<RozkladModelForTeachersSessionModel>();
             foreach (var temp in entity)

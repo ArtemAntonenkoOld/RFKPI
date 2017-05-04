@@ -10,7 +10,7 @@ namespace RKE.UIModels.RozkladModelForStudents
         
     {
         public string GroupName { get; set; }
-        public List<RozkladModelForStudentsWeekModel> WeekModel { get; set; }
+        public RozkladModelForStudentsLessonModel[][] LessonModel { get; set; }
         public List<RozkladModelForStudentsSessionModel> SessionModel { get; set; }
     }
     

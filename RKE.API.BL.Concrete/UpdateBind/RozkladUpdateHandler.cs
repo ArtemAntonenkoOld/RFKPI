@@ -8,11 +8,13 @@ using RKE.API.Models.AllGroupsApiModels;
 using RestSharp;
 using RKE.IOC.Common.Attributes;
 using RKE.API.BL.Abstract;
-using RKE.DAL.Abstract.Repositories;
+using RKE.DAL.Abstract.IRepositories;
 using RKE.API.BL.Concrete.Mappers;
 using RKE.DAL.Concrate.Repositories;
 using RKE.API.Models.AllTeachersApiModels;
 using RKE.API.Models.AllLessonsApiModels;
+using RKE.API.Models.AllAudsApiModels;
+using RKE.API.Models.AllDisziplinsApiModels;
 
 namespace RKE.API.BL.Concrete.UpdateBind
 {
@@ -21,14 +23,23 @@ namespace RKE.API.BL.Concrete.UpdateBind
     public class RozkladUpdateHandler: IRozkladUpdateHandler
     {
         private readonly IGroupRepository _groupRepository;
+        private readonly IAudRepository _audRepository;
+        private readonly IDisziplinRepository _disziplinRepository;
         private readonly ITeacherRepository _teacherRepository;
+        private readonly ILessonRepository _lessonRepository;
         public RozkladUpdateHandler(
                 IGroupRepository groupRepository,
-                ITeacherRepository teacherRepository
+                ITeacherRepository teacherRepository,
+                IAudRepository audRepository,
+                IDisziplinRepository disziplinRepository,
+                ILessonRepository lessonRepository
              )
             {
+                _disziplinRepository = disziplinRepository;
                 _teacherRepository = teacherRepository;
                 _groupRepository = groupRepository;
+                _audRepository= audRepository;
+                _lessonRepository = lessonRepository;
             }
 
 
@@ -78,10 +89,56 @@ namespace RKE.API.BL.Concrete.UpdateBind
 
             return result;
         }
-      /*  private List<ResultForAllLessonsModel> GetAllLessons()
+        private List<ResultForAllAudsModel> GetAllAuds()
+        {
+            List<ResultForAllAudsModel> result = new List<ResultForAllAudsModel>();
+            RestClient client = new RestClient("http://api.rozklad.hub.kpi.ua/rooms/");
+            do
+            {
+                var request = new RestRequest(Method.GET);
+
+                IRestResponse<RootObjectForAllAudsModel> response2 = client.Execute<RootObjectForAllAudsModel>(request);
+                if (response2.Data.next == null)
+                {
+                    break;
+                };
+                foreach (var item in response2.Data.results)
+                {
+                    result.Add(item);
+                }
+                client = new RestClient(response2.Data.next);
+
+            } while (true);
+
+            return result;
+        }
+        private List<ResultForAllDisziplinsModel> GetAllDisziplins()
+        {
+            List<ResultForAllDisziplinsModel> result = new List<ResultForAllDisziplinsModel>();
+            RestClient client = new RestClient("http://api.rozklad.hub.kpi.ua/disciplines/?limit=10");
+            do
+            {
+                var request = new RestRequest(Method.GET);
+
+                IRestResponse<RootObjectForAllDisziplinsModel> response2 = client.Execute<RootObjectForAllDisziplinsModel>(request);
+                if (response2.Data.next == null)
+                {
+                    break;
+                };
+                foreach (var item in response2.Data.results)
+                {
+                    result.Add(item);
+                }
+                client = new RestClient(response2.Data.next);
+
+            } while (true);
+
+            return result;
+        }
+        private List<ResultForAllLessonsModel> GetAllLessons()
         {
             List<ResultForAllLessonsModel> result = new List<ResultForAllLessonsModel>();
-            RestClient client = new RestClient("https://api.rozklad.hub.kpi.ua/lessons/");
+            RestClient client = new RestClient("http://api.rozklad.hub.kpi.ua/lessons/?limit=10");
             do
             {
                 var request = new RestRequest(Method.GET);
@@ -102,10 +159,6 @@ namespace RKE.API.BL.Concrete.UpdateBind
             return result;
         }
 
-        public async Task SetAllLessons()
-        {
-
-        }*/
         public async Task SetGroups()
         {
             SetGroupMapper mapper = new SetGroupMapper();
@@ -113,11 +166,12 @@ namespace RKE.API.BL.Concrete.UpdateBind
             foreach (var item in groups)
             {
                 
-                if ((await _groupRepository.GetByAsync(p => p.ApiGroupId == item.Id)).Count()==0) {
+                if (await _groupRepository.GetCountAsync(p => p.ApiGroupId == item.Id)==0) {
                     await _groupRepository.AddAsync(item);
+                    await _groupRepository.SaveAsync();
                 }
             }
-            await _groupRepository.SaveAsync();
+            
         }
         public async Task SetTeachers()
         {
@@ -125,13 +179,54 @@ namespace RKE.API.BL.Concrete.UpdateBind
             var groups = mapper.ModelToEntity(GetAllTeachers());
             foreach (var item in groups)
             {
-                if ((await _teacherRepository.GetByAsync(p => p.ApiTeacherId==item.Id)).Count() == 0)
+                if (await _teacherRepository.GetCountAsync(p => p.ApiId==item.Id) == 0)
                 {
                     await _teacherRepository.AddAsync(item);
+                    await _teacherRepository.SaveAsync();
                 }
             }
-            await _teacherRepository.SaveAsync();
         }
-       
+        public async Task SetAuds()
+        {
+            SetAudsMapper mapper = new SetAudsMapper();
+            var groups = mapper.ModelToEntity(GetAllAuds());
+            foreach (var item in groups)
+            {
+                if (await _audRepository.GetCountAsync(p => p.IdOfApi == item.Id) == 0)
+                {
+                    await _audRepository.AddAsync(item);
+                    await _audRepository.SaveAsync();
+                }
+            }
+        }
+        public async Task SetDisziplins()
+        {
+            SetDisziplinMapper mapper = new SetDisziplinMapper();
+            var groups = mapper.ModelToEntity(GetAllDisziplins());
+            foreach (var item in groups)
+            {
+                if (await _disziplinRepository.GetCountAsync(p => p.IdOfApi == item.Id) == 0)
+                {
+                    await _disziplinRepository.AddAsync(item);
+                    await _disziplinRepository.SaveAsync();
+                }
+            }
+        }
+        public async Task SetLessons()
+        {
+            SetLessonMapper mapper = new SetLessonMapper();
+            var groups = mapper.ModelToEntity(GetAllLessons());
+            foreach (var item in groups)
+            {
+                if (await _lessonRepository.GetCountAsync(p => p.ApiId == item.Id) == 0)
+                {
+                    await _lessonRepository.AddAsync(item);
+                    await _lessonRepository.SaveAsync();
+                }
+            }
+            
+        }
+
+
     }
 }

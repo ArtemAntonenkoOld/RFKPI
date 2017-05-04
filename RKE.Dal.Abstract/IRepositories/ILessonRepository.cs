@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RKE.DAL.Abstract.Repositories
+namespace RKE.DAL.Abstract.IRepositories
 {
     public interface ILessonRepository:IGenericRepository<Lesson>
     {

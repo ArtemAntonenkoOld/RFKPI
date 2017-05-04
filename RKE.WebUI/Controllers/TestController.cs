@@ -14,13 +14,26 @@ namespace RKE.WebUI.Controllers
         {
             _logic = logic;
         }
-        public async Task Index()
+        public async Task SetTeachers()
         {
             await _logic.SetTeachers();
         }
         public async Task SetGroups()
         {
             await _logic.SetGroups();
+        }
+        
+        public async Task SetLessons()
+        {
+            await _logic.SetLessons();
+        }
+        public async Task SetAuds()
+        {
+            await _logic.SetAuds();
+        }
+        public async Task SetDisziplins()
+        {
+            await _logic.SetDisziplins();
         }
     }
 

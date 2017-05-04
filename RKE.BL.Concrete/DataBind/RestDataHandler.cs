@@ -1,6 +1,6 @@
 ﻿using RKE.BL.Abstract;
 using RKE.BL.Concrete.RestMappersForAllGroups;
-using RKE.DAL.Abstract.Repositories;
+using RKE.DAL.Abstract.IRepositories;
 using RKE.Entity;
 using RKE.IOC.Common.Attributes;
 using RKE.UIModels.RestModelForAllGroups;

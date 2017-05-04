@@ -12,21 +12,38 @@ namespace RKE.BL.Concrete.RozkladMappersForTeachers
     {
         public List<RozkladModelForTeachersRozkladModel> EntityToModel(List<Teacher> entity)
         {
-            RozkladMapperForTeachersLessonsForExternalStudentsMapper _lessonsForExternalStudentsMapper = new RozkladMapperForTeachersLessonsForExternalStudentsMapper();
-            RozkladMapperForTeachersLessonMapper _lessonsForStudentsMapper = new RozkladMapperForTeachersLessonMapper();
-            RozkladMapperForTeachersSessionMapper _sessionMapper = new RozkladMapperForTeachersSessionMapper();
+            RozkladMapperForTeachersLessonMapper _lessonsMapperForStudentsLessonMapper = new RozkladMapperForTeachersLessonMapper();
+            RozkladMapperForTeachersSessionMapper _sessionMapperForStudentsLessonMapper = new RozkladMapperForTeachersSessionMapper();
+            RozkladMapperForTeachersExternalLessonMapper _externalLessonsMapperForStudentsLessonMapper = new RozkladMapperForTeachersExternalLessonMapper();
+            List<Lesson> session = new List<Lesson>();
+            List<Lesson> lesson = new List<Lesson>();
+            List<Lesson> external = new List<Lesson>();
             List<RozkladModelForTeachersRozkladModel> l=new List<RozkladModelForTeachersRozkladModel>();
             foreach (var temp in entity)
             {
-                l.Add(new RozkladModelForTeachersRozkladModel()
+                RozkladModelForTeachersRozkladModel k = new RozkladModelForTeachersRozkladModel();
+                foreach (var lessonItem in temp.Lessons)
                 {
-                    FullName = temp.FullName,
-                    ShortName = temp.ShortName,
-                    LessonForExternalStudents =_lessonsForExternalStudentsMapper.EntityToModel(temp.LessonsForExternalStudents.ToList()),
-                    LessonForStudents = _lessonsForStudentsMapper.EntityToModel(temp.Lessons.ToList()),
-                    Session = _sessionMapper.EntityToModel(temp.Session.ToList())
-                    
-                });
+                    if (lessonItem.TypeOfLesson != 5)
+                    {
+                        lesson.Add(lessonItem);
+                    }
+                    else if (lessonItem.Groups.FirstOrDefault().Type==1)
+                    {
+                        external.Add(lessonItem);
+                    }
+                    else
+                    {
+                        session.Add(lessonItem);
+                    }
+                }
+                k.LessonModel = _lessonsMapperForStudentsLessonMapper.EntityToModel(lesson);
+                k.SessionModel = _sessionMapperForStudentsLessonMapper.EntityToModel(session);
+                k.ExternalModel = _externalLessonsMapperForStudentsLessonMapper.EntityToModel(external);
+                k.FullName = temp.FullNameOfTeacher;
+                k.ShortName = temp.ShortNameOfTeacherWithDegree;
+                l.Add(k);
+
             }
             return l;
         }

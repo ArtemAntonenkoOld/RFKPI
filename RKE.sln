@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RKE.Entity", "RKE.Entity\RKE.Entity.csproj", "{60B6292D-90C4-44DA-8AA1-3C4E9AE9BF3F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RKE.OpenConsole", "RKE.OpenConsole\RKE.OpenConsole.csproj", "{0BCCFC0E-9C66-43AC-8519-AC44F545DF0F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RKE.DAL.Concrate", "RKE.DAL.Concrate\RKE.DAL.Concrate.csproj", "{B3494E51-6785-431C-8CCC-BA1772618583}"
@@ -35,16 +33,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RKE.API.BL.Abstract", "RKE.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RKE.API.Shedules", "RKE.API.Shedules\RKE.API.Shedules.csproj", "{88B6AFED-A032-4476-80E2-B7294155935F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RKE.Entity", "RKE.Entity\RKE.Entity.csproj", "{90C21925-1633-4510-A653-46BB0D641059}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{60B6292D-90C4-44DA-8AA1-3C4E9AE9BF3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{60B6292D-90C4-44DA-8AA1-3C4E9AE9BF3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{60B6292D-90C4-44DA-8AA1-3C4E9AE9BF3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{60B6292D-90C4-44DA-8AA1-3C4E9AE9BF3F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0BCCFC0E-9C66-43AC-8519-AC44F545DF0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0BCCFC0E-9C66-43AC-8519-AC44F545DF0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BCCFC0E-9C66-43AC-8519-AC44F545DF0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -101,6 +97,10 @@ Global
 		{88B6AFED-A032-4476-80E2-B7294155935F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88B6AFED-A032-4476-80E2-B7294155935F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88B6AFED-A032-4476-80E2-B7294155935F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90C21925-1633-4510-A653-46BB0D641059}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90C21925-1633-4510-A653-46BB0D641059}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90C21925-1633-4510-A653-46BB0D641059}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90C21925-1633-4510-A653-46BB0D641059}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

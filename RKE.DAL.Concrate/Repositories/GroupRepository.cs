@@ -1,4 +1,4 @@
-﻿using RKE.DAL.Abstract.Repositories;
+﻿using RKE.DAL.Abstract.IRepositories;
 using RKE.DAL.Abstract.IContextOfDatabase;
 using RKE.Entity;
 using System;

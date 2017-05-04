@@ -51,10 +51,6 @@
       <Project>{b3494e51-6785-431c-8ccc-ba1772618583}</Project>
       <Name>RKE.DAL.Concrate</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RKE.Entity\RKE.Entity.csproj">
-      <Project>{60b6292d-90c4-44da-8aa1-3c4e9ae9bf3f}</Project>
-      <Name>RKE.Entity</Name>
-    </ProjectReference>
     <ProjectReference Include="..\RKE.IOC.Common\RKE.IOC.Common.csproj">
       <Project>{c7fcbd30-0389-4081-a1ed-80c24058d621}</Project>
       <Name>RKE.IOC.Common</Name>

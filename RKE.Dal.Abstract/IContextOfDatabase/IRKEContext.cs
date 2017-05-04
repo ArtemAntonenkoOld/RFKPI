@@ -12,12 +12,12 @@ namespace RKE.DAL.Abstract.IContextOfDatabase
     public interface IRKEContext : IDisposable
     {
 
-        IDbSet<Lesson> Lesson { get; set; }
-        IDbSet<Teacher> Teacher { get; set; }
-        IDbSet<Group> Group { get; set; }
-        IDbSet<Session> Session { get; set; }
-        IDbSet<Week> Week { get; set; }
-        IDbSet<LessonForExternalStudents> LessonForExternalStudents { get; set; }
+        IDbSet<Aud> Auds { get; set; }
+        IDbSet<Disziplin> Disziplins { get; set; }
+        IDbSet<Group> Groups { get; set; }
+        IDbSet<LessonChanged> LessonChangeds { get; set; }
+        IDbSet<Lesson> Lessons { get; set; }
+        IDbSet<Teacher> Teachers { get; set; }
         IDbSet<TEntity> Set<TEntity>() where TEntity : class;
         DbEntityEntry Entry(object entity);
         int SaveChanges();

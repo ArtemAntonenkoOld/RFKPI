@@ -1,37 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace RKE.Entity
 {
-    [Table("tbLessonChanged")]
-    public class LessonChanged
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
+    public partial class LessonChanged
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Column("cId")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public LessonChanged()
+        {
+            Lessons = new HashSet<Lesson>();
+        }
+
         public int Id { get; set; }
 
-        [Column("cComment")]
-        public string Comment { get; set; }
-
-        [Column("cIdOfUser")]
-        public string UserId { get; set; }
-        [ForeignKey("UserId")]
-        public virtual User User { get; set; }
-
-        [Column("cIdOfLesson")]
-        public int LessonId { get; set; }
-        [ForeignKey("LessonId")]
-        public virtual Lesson Lesson { get; set; }
-
-        [Column("cDateOfLesson")]
-        public DateTime DateOfLesson { get; set; }
-        [Column("cNumberOfLesson")]
         public int NumberOfLesson { get; set; }
+
+        public int? Day { get; set; }
+
+        public DateTime Date { get; set; }
+
+        public int? Week { get; set; }
+
+        public int? AudApiId{ get; set; }
+
+        public virtual Aud Auds { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Lesson> Lessons { get; set; }
     }
 }

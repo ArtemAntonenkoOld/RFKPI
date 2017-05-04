@@ -17,11 +17,12 @@ namespace RKE.API.BL.Concrete.Mappers
             {
                 p.Add(new Teacher()
                 {
-                   FullName=temp.full_name,
-                   ApiTeacherId=temp.id,
-                   Name=temp.name,
-                   Position=temp.degree,
-                   ShortName = temp.short_name_with_degree
+                   ApiId=temp.id,
+                   NameOfTeacher=temp.name,
+                   Degree=temp.degree,
+                   FullNameOfTeacher=temp.full_name,
+                   ShortNameOfTeacher=temp.short_name,
+                   ShortNameOfTeacherWithDegree=temp.short_name_with_degree                  
                    
                 });
             }

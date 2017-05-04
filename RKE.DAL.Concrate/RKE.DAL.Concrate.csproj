@@ -87,16 +87,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContextOfDatabase\RKEContext.cs" />
+    <Compile Include="Repositories\AudRepository.cs" />
+    <Compile Include="Repositories\DisziplinRepository.cs" />
+    <Compile Include="Repositories\LessonChangedRepository.cs" />
     <Compile Include="Repositories\TeacherRepository.cs" />
     <Compile Include="SampleTest.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
-    <Compile Include="Repositories\SessionRepository.cs" />
     <Compile Include="Repositories\LessonRepository.cs" />
-    <Compile Include="Repositories\LessonForExternalStudentRepository.cs" />
     <Compile Include="Repositories\GroupRepository.cs" />
-    <Compile Include="Repositories\WeekRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -111,7 +111,7 @@
       <Name>RKE.DAL.Abstract</Name>
     </ProjectReference>
     <ProjectReference Include="..\RKE.Entity\RKE.Entity.csproj">
-      <Project>{60b6292d-90c4-44da-8aa1-3c4e9ae9bf3f}</Project>
+      <Project>{90C21925-1633-4510-A653-46BB0D641059}</Project>
       <Name>RKE.Entity</Name>
     </ProjectReference>
     <ProjectReference Include="..\RKE.IOC.Common\RKE.IOC.Common.csproj">

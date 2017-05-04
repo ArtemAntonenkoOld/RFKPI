@@ -46,14 +46,14 @@
     <Compile Include="FindGroups\FindGroupsMapper.cs" />
     <Compile Include="RozkladMappersForExternalStudents\RozkladMapperForExternalStudentsLessonMapper.cs" />
     <Compile Include="RozkladMappersForExternalStudents\RozkladMapperForExternalStudentsRozkladMapper.cs" />
+    <Compile Include="RozkladMappersForStudents\RozkladMapperForStudentsSessionMapper.cs" />
     <Compile Include="RozkladMappersForStudents\RozkladMapperForStudentsLessonMapper.cs" />
     <Compile Include="RozkladMappersForStudents\RozkladMapperForStudentsRozkladMapper.cs" />
-    <Compile Include="RozkladMappersForStudents\RozkladMapperForStudentsSessionMapper.cs" />
-    <Compile Include="RozkladMappersForStudents\RozkladMapperForStudentsWeekMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RozkladMappersForTeachers\RozkladMapperForTeachersGroupMapper.cs" />
     <Compile Include="RozkladMappersForTeachers\RozkladMapperForTeachersLessonMapper.cs" />
-    <Compile Include="RozkladMappersForTeachers\RozkladMapperForTeachersLessonsForExternalStudentsMapper.cs" />
     <Compile Include="RozkladMappersForTeachers\RozkladMapperForTeachersRozkladMapper.cs" />
+    <Compile Include="RozkladMappersForTeachers\RozkladMapperForTeachersExternalLessonMapper.cs" />
     <Compile Include="RozkladMappersForTeachers\RozkladMapperForTeachersSessionMapper.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -74,7 +74,7 @@
       <Name>RKE.DAL.Concrate</Name>
     </ProjectReference>
     <ProjectReference Include="..\RKE.Entity\RKE.Entity.csproj">
-      <Project>{60b6292d-90c4-44da-8aa1-3c4e9ae9bf3f}</Project>
+      <Project>{90c21925-1633-4510-a653-46bb0d641059}</Project>
       <Name>RKE.Entity</Name>
     </ProjectReference>
     <ProjectReference Include="..\RKE.IOC.Common\RKE.IOC.Common.csproj">

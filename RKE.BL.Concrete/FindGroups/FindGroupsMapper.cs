@@ -17,7 +17,6 @@ namespace RKE.BL.Concrete.RestMappersForAllGroups
             {
                 p.Add(new FindGroupsModel()
                 {
-                    Id=temp.Id,
                     Name=temp.NameOfGroup
 
                 });

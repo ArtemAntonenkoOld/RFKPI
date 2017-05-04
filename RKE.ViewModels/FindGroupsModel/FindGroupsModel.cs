@@ -8,7 +8,6 @@ namespace RKE.UIModels.RestModelForAllGroups
 {
     public class FindGroupsModel
     {
-        public int Id { get; set; }
         public string Name { get; set; }
     }
 }

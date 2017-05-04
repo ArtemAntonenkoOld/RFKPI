@@ -11,5 +11,8 @@ namespace RKE.API.BL.Abstract
     {
         Task SetGroups();
         Task SetTeachers();
+        Task SetLessons();
+        Task SetAuds();
+        Task SetDisziplins();
     }
 }

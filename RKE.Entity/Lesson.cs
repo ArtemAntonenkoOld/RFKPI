@@ -1,45 +1,52 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
 namespace RKE.Entity
 {
-    [Table("tbLesson")]
-    public  partial class Lesson
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
+    public partial class Lesson
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Lesson()
         {
-            this.LessonChanged = new HashSet<LessonChanged>();
+            Groups = new HashSet<Group>();
         }
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Key]
-        [Column("cId")]
         public int Id { get; set; }
-        [Column("cDay")]
-        public int Day { get; set; }
-        [Column("cNumberOfLesson")]
+
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int ApiId { get; set; }
+
         public int NumberOfLesson { get; set; }
-        [Column("сAud")]
-        public string Aud { get; set; }
-        [Column("cType")]
-        public string Type { get; set; }
-        [Column("cNameOfLesson")]
-        public string NameOfLesson { get; set; }
-        [Column("cIsActive")]
-        public bool IsActive { get; set; }
 
+        public int? Day { get; set; }
 
-        
-        [Column("cIdOfTeacher")]
-        public int TeacherId { get; set; }
-        [ForeignKey("TeacherId")]
-        public virtual Teacher Teacher { get; set; }
-        [Column("cIdOfWeek")]
-        public int WeekId { get; set; }
-        [ForeignKey("WeekId")]
-        public virtual Week Week { get; set; }
-        public virtual ICollection<LessonChanged> LessonChanged { get; set; }
+        public int? Week { get; set; }
 
+        public DateTime? Date { get; set; }
+
+        public int? DisziplinApiId { get; set; }
+
+        public int? LessonChangedId { get; set; }
+
+        public int? TeacherApiId { get; set; }
+
+        public int TypeOfLesson { get; set; }
+
+        public int? AudApiId { get; set; }
+
+        public virtual Aud Auds{ get; set; }
+
+        public virtual Disziplin Disziplins { get; set; }
+
+        public virtual LessonChanged LessonChangeds { get; set; }
+
+        public virtual Teacher Teachers { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Group> Groups { get; set; }
     }
 }

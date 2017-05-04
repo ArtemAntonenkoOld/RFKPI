@@ -382,7 +382,7 @@
       <Name>RKE.DAL.Concrate</Name>
     </ProjectReference>
     <ProjectReference Include="..\RKE.Entity\RKE.Entity.csproj">
-      <Project>{60b6292d-90c4-44da-8aa1-3c4e9ae9bf3f}</Project>
+      <Project>{90c21925-1633-4510-a653-46bb0d641059}</Project>
       <Name>RKE.Entity</Name>
     </ProjectReference>
     <ProjectReference Include="..\RKE.Identity\RKE.Identity.csproj">

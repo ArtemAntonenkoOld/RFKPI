@@ -19,12 +19,9 @@ namespace RKE.API.BL.Concrete.Mappers
                 p.Add(new Group()
                 {
                     NameOfGroup=temp.name,
-                    Type=temp.type,
                     ApiGroupId=temp.id,
-                    Id=0,
-                    LessonsForExternalStudents=new Collection<LessonForExternalStudents>(),
-                    Session = new Collection<Session>(),
-                    Weeks =  new Collection<Week>(),
+                    Type=temp.type                    
+                    
                 });
             }
             return p;

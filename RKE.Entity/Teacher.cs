@@ -1,41 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace RKE.Entity
 {
-    [Table("tbTeacher")]
-    
-    public  partial class Teacher
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
+    public partial class Teacher
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Teacher()
         {
-            this.Lessons = new HashSet<Lesson>();
-            this.LessonsForExternalStudents = new HashSet<LessonForExternalStudents>();
-            this.Session = new HashSet<Session>();
+            Lessons = new HashSet<Lesson>();
         }
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+
         [Key]
-        [Column("cId")]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int ApiId { get; set; }
+
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        [Column("cName")]
-        public string Name { get; set; }
-        [Column("cFullName")]
-        public string FullName { get; set; }
-        [Column("cShortName")]
-        public string ShortName { get; set; }
-        [Column("cPosition")]
-        public string Position { get; set; }
-        
-        [Column("cApiTeacherId")]
-        public int ApiTeacherId { get; set; }
-        
+
+        public string NameOfTeacher { get; set; }
+        public string FullNameOfTeacher { get; set; }
+        public string ShortNameOfTeacher { get; set; }
+        public string ShortNameOfTeacherWithDegree { get; set; }
+        public string Degree { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Lesson> Lessons { get; set; }
-        public virtual ICollection<LessonForExternalStudents> LessonsForExternalStudents { get; set; }
-        public virtual ICollection<Session> Session { get; set; }
+        
     }
 }

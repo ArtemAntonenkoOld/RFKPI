@@ -53,6 +53,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mappers\SetAudsMapper.cs" />
+    <Compile Include="Mappers\SetDisziplinMapper.cs" />
+    <Compile Include="Mappers\SetLessonGroupMapper.cs" />
     <Compile Include="Mappers\SetLessonMapper.cs" />
     <Compile Include="Mappers\SetTeacherMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,7 +80,7 @@
       <Name>RKE.DAL.Concrate</Name>
     </ProjectReference>
     <ProjectReference Include="..\RKE.Entity\RKE.Entity.csproj">
-      <Project>{60B6292D-90C4-44DA-8AA1-3C4E9AE9BF3F}</Project>
+      <Project>{90C21925-1633-4510-A653-46BB0D641059}</Project>
       <Name>RKE.Entity</Name>
     </ProjectReference>
     <ProjectReference Include="..\RKE.IOC.Common\RKE.IOC.Common.csproj">

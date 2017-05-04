@@ -1,35 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace RKE.Entity
 {
-    [Table("tbGroup")]
-    public  partial class Group
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
+    public partial class Group
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Group()
         {
-            this.LessonsForExternalStudents =new HashSet<LessonForExternalStudents>();
-            this.Weeks =new HashSet<Week>();
-            this.Session = new HashSet<Session>();
+            Lessons = new HashSet<Lesson>();
         }
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+
         [Key]
-        [Column("cId")]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int ApiGroupId { get; set; }
+
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        [Column("cNameOfGroup")]
+
         public string NameOfGroup { get; set; }
 
-        [Column("cApiGroupId")]
-        public int ApiGroupId { get; set; }
         public int Type { get; set; }
+        
 
-        public virtual ICollection<LessonForExternalStudents> LessonsForExternalStudents { get; set; }
-        public virtual ICollection<Week> Weeks { get; set; }
-        public virtual ICollection<Session> Session { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Lesson> Lessons { get; set; }
     }
 }

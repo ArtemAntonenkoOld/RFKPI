@@ -14,12 +14,13 @@ namespace RKE.BL.Concrete.RozkladMappersForStudents
                 p.Add(new RozkladModelForStudentsLessonModel()
                 {
                     Day = temp.Day,
-                    Aud = temp.Aud,
-                    Id = temp.Id,
+                    Aud = temp.Auds.NumberOfAud,
                     NumberOfLesson = temp.NumberOfLesson,
-                    Type = temp.Type,
-                    NameOfTeacher = temp.Teacher.FullName,
-                    NameOfLesson = temp.NameOfLesson
+                    TypeOfLesson=temp.TypeOfLesson,
+                    Disziplin = temp.Disziplins.NameOfDisziplin,
+                    Teacher = temp.Teachers.ShortNameOfTeacherWithDegree,
+                    Week=temp.Week,
+
 
                 });
             }
@@ -31,7 +32,7 @@ namespace RKE.BL.Concrete.RozkladMappersForStudents
             
                 foreach (var item in p)
                 {
-                    obj[item.Day-1][item.NumberOfLesson-1] = item;
+                    obj[(int)item.Day-1][item.NumberOfLesson-1] = item;
                 }
             return obj;
         }
