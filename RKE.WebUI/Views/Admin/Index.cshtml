@@ -1,75 +1,171 @@
-﻿
-@{ Layout = "_LayoutForLessons.cshtml";}
+﻿<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Angular Material style sheet -->
+    @Styles.Render("~/Content/css")
+     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <style>
+        md-content{
+            background-color:#eee;
 
-@Styles.Render("~/Content/LessonsForStudents")
-@using Bender.Extensions
-@model RKE.UIModels.RozkladModelsForTeachers.RozkladModelForTeachersRozkladModel
-<div class="container">
-    <div>@Model.FullName</div>
-    <div class="col-md-12">
-        @foreach (var weekItem in @Model.LessonForStudents)
-        {
-            <table class="table table-responsive table-striped table-bordered ">
-                <tbody>
-                    <tr>
-                        <td></td>
-                        <td>Понеділок</td>
-                        <td>Вівторок</td>
-                        <td>Середа</td>
-                        <td>Четвер</td>
-                        <td>П'ятниця</td>
-                        <td>Субота</td>
-                    </tr>
-                    <tr>
-                        @for (int i = 0; i < 6; i++)
-                {
-                        <tr>
-                            <td></td>
-                            @for (int j = 0; j < 6; j++)
-                            {
-                                <td class="col-md-2"></td>
-
-                            }
-                        </tr>
-                        }
-
-
-                    </tbody>
-                </table>
         }
-    </div>
+        .jumbotron{
+                margin-top: 70px;
 
-    @if (@Model.Session.IsNullOrEmpty())
-    {
-        <div class="col-md-4 table-responsive">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Група</th>
-                        <th>Дисципліна</th>
-                        <th>Дата</th>
-                        <th>Ауд.</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model.Session)
-                {
-                        <tr>
-                            <td></td>
-                            <td>@item.NameOfLesson</td>
-                            <td>@item.Date.ToShortDateString()</td>
-                            
+        }
+    </style>
+    <meta charset="utf-8">
+</head>
+<body ng-app="BlankApp" ng-cloak>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">RKE</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
 
-                        </tr>
-                    }
-                </tbody>
-            </table>
+            </div>
         </div>
-    }
-</div>
-<script>
-    $("#menu-toggle").click(function (e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-</script>
+    </nav>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="text-center">Додати заняття</h1>
+            <form>
+            <div ng-controller="DemoCtrl as ctrl" layout="column" ng-cloak>
+                <md-content class="md-padding">
+                    <form ng-submit="$event.preventDefault()">
+                        <md-autocomplete ng-disabled="ctrl.isDisabled"
+                                         md-no-cache="ctrl.noCache"
+                                         md-selected-item="ctrl.selectedItem"
+                                         md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"
+                                         md-search-text="ctrl.searchText"
+                                         md-selected-item-change="ctrl.selectedItemChange(item)"
+                                         md-items="item in ctrl.querySearch(ctrl.searchText)"
+                                         md-item-text="item.display"
+                                         md-min-length="0"
+                                         placeholder="Виберіть группу">
+                            <md-item-template>
+                                <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.display}}</span>
+                            </md-item-template>
+                            <md-not-found>
+                                Група "{{ctrl.searchText}}" не знайдена.
+                            </md-not-found>
+                        </md-autocomplete>
+                    </form>
+                </md-content>
+            </div>
+                <input type="submit" />
+            </form>
+        </div>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+    <script type="text/javascript">
+
+    /**
+     * You must include the dependency on 'ngMaterial'
+     */
+        (function () {
+            'use strict';
+            angular
+                .module('BlankApp', ['ngMaterial'])
+                .controller('DemoCtrl', DemoCtrl);
+
+            function DemoCtrl($timeout, $q, $log) {
+                var self = this;
+
+                self.simulateQuery = false;
+                self.isDisabled = false;
+
+                // list of `state` value/display objects
+                self.states = loadAll();
+                self.querySearch = querySearch;
+                self.selectedItemChange = selectedItemChange;
+                self.searchTextChange = searchTextChange;
+
+                self.newState = newState;
+
+                function newState(state) {
+                    alert("Вибачте, але групи з таким іменем не знайдено " + state);
+                }
+
+                // ******************************
+                // Internal methods
+                // ******************************
+
+                /**
+                 * Search for states... use $timeout to simulate
+                 * remote dataservice call.
+                 */
+                function querySearch(query) {
+                    var results = query ? self.states.filter(createFilterFor(query)) : self.states,
+                        deferred;
+                    if (self.simulateQuery) {
+                        deferred = $q.defer();
+                        $timeout(function () { deferred.resolve(results); }, Math.random() * 1000, false);
+                        return deferred.promise;
+                    } else {
+                        return results;
+                    }
+                }
+
+                function searchTextChange(text) {
+                    $log.info('Text changed to ' + text);
+                }
+
+                function selectedItemChange(item) {
+                    $log.info('Item changed to ' + JSON.stringify(item));
+                }
+
+                /**
+                 * Build `states` list of key/value pairs
+                 */
+                function loadAll() {
+                    var allStates = 'Alabama, Alaska, Arizona, Arkansas, California, Colorado, Connecticut, Delaware,\
+              Florida, Georgia, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana,\
+              Maine, Maryland, Massachusetts, Michigan, Minnesota, Mississippi, Missouri, Montana,\
+              Nebraska, Nevada, New Hampshire, New Jersey, New Mexico, New York, North Carolina,\
+              North Dakota, Ohio, Oklahoma, Oregon, Pennsylvania, Rhode Island, South Carolina,\
+              South Dakota, Tennessee, Texas, Utah, Vermont, Virginia, Washington, West Virginia,\
+              Wisconsin, Wyoming';
+
+                    return allStates.split(/, +/g).map(function (state) {
+                        return {
+                            value: state.toLowerCase(),
+                            display: state
+                        };
+                    });
+                }
+
+                /**
+                 * Create filter function for a query string
+                 */
+                function createFilterFor(query) {
+                    var lowercaseQuery = angular.lowercase(query);
+
+                    return function filterFn(state) {
+                        return (state.value.indexOf(lowercaseQuery) === 0);
+                    };
+
+                }
+            }
+        })();
+    </script>
+</body>
+</html>
+

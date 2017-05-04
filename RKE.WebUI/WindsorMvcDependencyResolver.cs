@@ -8,6 +8,7 @@ using IDependencyResolver = System.Web.Http.Dependencies.IDependencyResolver;
 using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
+using RKE.API.Shedules.Triggers;
 
 namespace RKE.WebUI
 {
@@ -20,6 +21,7 @@ namespace RKE.WebUI
         public WindsorMvcDependencyResolver(IKernel kernel)
         {
             _kernel = kernel;
+          
         }
 
 
@@ -66,7 +68,7 @@ namespace RKE.WebUI
 
             return scope;
         }
-    }
+         }
 
     [BindsTo(typeof(WindsorSignalRDependencyResolver))]
     public class WindsorSignalRDependencyResolver : Microsoft.AspNet.SignalR.DefaultDependencyResolver

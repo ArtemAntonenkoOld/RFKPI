@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataBind\RestDataHandler.cs" />
     <Compile Include="DataBind\RozkladHandler.cs" />
+    <Compile Include="FindGroups\FindGroupsMapper.cs" />
     <Compile Include="RozkladMappersForExternalStudents\RozkladMapperForExternalStudentsLessonMapper.cs" />
     <Compile Include="RozkladMappersForExternalStudents\RozkladMapperForExternalStudentsRozkladMapper.cs" />
     <Compile Include="RozkladMappersForStudents\RozkladMapperForStudentsLessonMapper.cs" />
@@ -53,9 +55,12 @@
     <Compile Include="RozkladMappersForTeachers\RozkladMapperForTeachersLessonsForExternalStudentsMapper.cs" />
     <Compile Include="RozkladMappersForTeachers\RozkladMapperForTeachersRozkladMapper.cs" />
     <Compile Include="RozkladMappersForTeachers\RozkladMapperForTeachersSessionMapper.cs" />
-    <Compile Include="UpdateBind\RozkladUpdateHandler.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\RKE.APIModels\RKE.API.Models.csproj">
+      <Project>{deda4dd2-f14a-47cf-9df8-3c5348fc9acb}</Project>
+      <Name>RKE.API.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RKE.BL.Abstract\RKE.BL.Abstract.csproj">
       <Project>{516372ab-dc22-42a6-9da4-850c13873418}</Project>
       <Name>RKE.BL.Abstract</Name>
@@ -85,7 +90,9 @@
       <Name>RKE.UIModels</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

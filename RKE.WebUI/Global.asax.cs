@@ -9,7 +9,8 @@ using System.Web.Routing;
 using Microsoft.AspNet.SignalR;
 using Newtonsoft.Json;
 using RKE.IOC.Manager.Core;
-
+using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace RKE.WebUI
 {
@@ -17,6 +18,7 @@ namespace RKE.WebUI
     {
         protected void Application_Start()
         {
+            
             IocMannager.Start();
             AreaRegistration.RegisterAllAreas();
             GlobalHost.DependencyResolver.Register(
@@ -33,6 +35,7 @@ namespace RKE.WebUI
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
         }
         protected void Application_End()
         {

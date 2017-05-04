@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8">
     @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/angular")
+
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -27,6 +29,9 @@
             </div>
         </div>
     </nav>
-    @RenderBody();
+    <div class="container">
+        @RenderBody();
+    </div>
+    
 </body>
 </html>

@@ -23,8 +23,9 @@ namespace RKE.Entity
         public int Id { get; set; }
         [Column("cNameOfGroup")]
         public string NameOfGroup { get; set; }
-        [Column("cRozkladLink")]
-        public string RozkladLink { get; set; }
+
+        [Column("cApiGroupId")]
+        public int ApiGroupId { get; set; }
         public int Type { get; set; }
 
         public virtual ICollection<LessonForExternalStudents> LessonsForExternalStudents { get; set; }

@@ -21,6 +21,10 @@ namespace RKE.Entity
         public int NumberOfWeek { get; set; }
 
         public virtual ICollection<Lesson> Lessons { get; set; }
+
+        [Column("cIdOfGroup")]
+        public int GroupId { get; set; }
+        [ForeignKey("GroupId")]
         public virtual Group Group { get; set; }
     }
 }

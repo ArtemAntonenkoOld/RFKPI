@@ -87,18 +87,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContextOfDatabase\RKEContext.cs" />
-    <Compile Include="Migrations\201704181030142_Init.cs" />
-    <Compile Include="Migrations\201704181030142_Init.Designer.cs">
-      <DependentUpon>201704181030142_Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704181101587_LessonChanged.cs" />
-    <Compile Include="Migrations\201704181101587_LessonChanged.Designer.cs">
-      <DependentUpon>201704181101587_LessonChanged.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704181211559_LessonChanged1.cs" />
-    <Compile Include="Migrations\201704181211559_LessonChanged1.Designer.cs">
-      <DependentUpon>201704181211559_LessonChanged1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Repositories\TeacherRepository.cs" />
     <Compile Include="SampleTest.cs" />
     <Compile Include="Migrations\Configuration.cs" />
@@ -114,6 +102,7 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -133,17 +122,6 @@
       <Project>{b21a4048-f59c-428b-8372-20139c32f17a}</Project>
       <Name>RKE.IOC.Manager</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201704181030142_Init.resx">
-      <DependentUpon>201704181030142_Init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704181101587_LessonChanged.resx">
-      <DependentUpon>201704181101587_LessonChanged.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704181211559_LessonChanged1.resx">
-      <DependentUpon>201704181211559_LessonChanged1.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

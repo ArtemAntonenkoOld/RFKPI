@@ -20,7 +20,14 @@ namespace RKE.Entity
         [Column("cNumberOfLesson")]
         public int NumberOfLesson { get; set; }
 
+        [Column("cIdOfGroup")]
+        public int GroupId { get; set; }
+        [ForeignKey("GroupId")]
         public virtual Group Group { get; set; }
+
+        [Column("cIdOfTeacher")]
+        public int TeacherId { get; set; }
+        [ForeignKey("TeacherId")]
         public virtual Teacher Teacher { get; set; }
     }
 }

@@ -58,7 +58,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExternalStudentsGroup.cs" />
     <Compile Include="Group.cs" />
     <Compile Include="Lesson.cs" />
     <Compile Include="LessonChanged.cs" />

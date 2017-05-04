@@ -34,7 +34,7 @@ namespace RKE.DAL.Concrate.Repositories
         {
             return Context.Set<TEntity>().Add(entity);
         }
-
+      
         public virtual async Task UpdateAsync(TEntity entity)
         {
             Context.Entry(entity).State = EntityState.Modified;

@@ -16,18 +16,53 @@ using Microsoft.AspNet.Identity;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using RKE.DAL.Concrate.ContextOfDatabase;
+using Hangfire;
+using RKE.WebUI.Controllers;
+using RKE.API.Shedules.Triggers;
+using RKE.API.BL.Concrete.UpdateBind;
+using Castle.MicroKernel;
+using Castle.Windsor;
 
 [assembly: OwinStartup(typeof(RKE.WebUI.Startup))]
 namespace RKE.WebUI
 {
+    public class WindsorJobActivator : JobActivator
+    {
+        private readonly IKernel _kernel;
+
+        /// <summary>
+        /// Initializes new instance of WindsorJobActivator with a Windsor Kernel
+        /// </summary>
+        /// <param name="kernel">Kernel that will be used to create instance
+        /// of classes during job activation process.</param>
+        public WindsorJobActivator(IKernel kernel)
+        {
+            if (kernel == null) throw new ArgumentNullException("kernel");
+
+            _kernel = kernel;
+        }
+
+        /// <summary>
+        /// Activates a job of a given type using the Windsor Kernel
+        /// </summary>
+        /// <param name="jobType">Type of job to activate</param>
+        /// <returns></returns>
+        public override object ActivateJob(Type jobType)
+        {
+            return _kernel.Resolve(jobType);
+        }
+    }
 
     public partial class Startup
     {
         private WebClient _dummy;
+        
         public void Configuration(IAppBuilder app)
-        {
-            app.CreatePerOwinContext<RKEContext>(RKEContext.Create);
+        { 
+            GlobalConfiguration.Configuration.UseSqlServerStorage("RKEDatabaseConnectionString");
 
+            
+            app.CreatePerOwinContext<RKEContext>(RKEContext.Create);
             app.CreatePerOwinContext<RKERoleManager>(RKERoleManager.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
             app.UseCookieAuthentication(new CookieAuthenticationOptions()
@@ -52,6 +87,11 @@ namespace RKE.WebUI
                 //   Resolver = windsorSignalDependencyResolver,
 
             });
+
+            app.UseHangfireDashboard();
+            app.UseHangfireServer();
+            BackgroundJob.Enqueue<AllGroupJob>(x => x.Execute());
+
         }
     }
 

@@ -28,8 +28,16 @@ namespace RKE.Entity
         public string NameOfLesson { get; set; }
         [Column("cIsActive")]
         public bool IsActive { get; set; }
-       
+
+
+        
+        [Column("cIdOfTeacher")]
+        public int TeacherId { get; set; }
+        [ForeignKey("TeacherId")]
         public virtual Teacher Teacher { get; set; }
+        [Column("cIdOfWeek")]
+        public int WeekId { get; set; }
+        [ForeignKey("WeekId")]
         public virtual Week Week { get; set; }
         public virtual ICollection<LessonChanged> LessonChanged { get; set; }
 

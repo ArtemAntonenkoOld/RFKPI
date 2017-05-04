@@ -31,8 +31,8 @@ namespace RKE.Entity
         [Column("cPosition")]
         public string Position { get; set; }
         
-        [Column("cLink")]
-        public string Link { get; set; }
+        [Column("cApiTeacherId")]
+        public int ApiTeacherId { get; set; }
         
         public virtual ICollection<Lesson> Lessons { get; set; }
         public virtual ICollection<LessonForExternalStudents> LessonsForExternalStudents { get; set; }

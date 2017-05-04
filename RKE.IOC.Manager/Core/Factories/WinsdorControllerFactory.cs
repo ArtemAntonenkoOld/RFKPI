@@ -38,5 +38,8 @@ namespace RKE.IOC.Manager.Core.Factories
             }
             return (IController)kernel.Resolve(controllerType);
         }
+
+     
+       
     }
 }
