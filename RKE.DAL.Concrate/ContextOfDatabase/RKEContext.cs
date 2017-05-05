@@ -28,7 +28,7 @@ namespace RKE.DAL.Concrate.ContextOfDatabase
         public virtual IDbSet<LessonChanged> LessonChangeds { get; set; }
         public virtual IDbSet<Lesson> Lessons { get; set; }
         public virtual IDbSet<Teacher> Teachers { get; set; }
-
+        public virtual IDbSet<LessonGroups> LessonGroups { get; set; }
         public IDbSet<TEntity> Set<TEntity>() where TEntity : class
         {
             return base.Set<TEntity>();
@@ -51,38 +51,7 @@ namespace RKE.DAL.Concrate.ContextOfDatabase
             modelBuilder.Entity<IdentityUserLogin>().HasKey<string>(l => l.UserId);
             modelBuilder.Entity<IdentityRole>().HasKey<string>(r => r.Id);
             modelBuilder.Entity<IdentityUserRole>().HasKey(r => new { r.RoleId, r.UserId });
-            modelBuilder.Entity<Aud>()
-                .HasMany(e => e.LessonChangeds)
-                .WithOptional(e => e.Auds)
-                .HasForeignKey(e => e.AudApiId);
-
             
-            modelBuilder.Entity<Aud>()
-                .HasMany(e => e.Lessons)
-                .WithOptional(e => e.Auds)
-                .HasForeignKey(e => e.AudApiId);
-
-            modelBuilder.Entity<Disziplin>()
-                .HasMany(e => e.Lessons)
-                .WithOptional(e => e.Disziplins)
-                .HasForeignKey(e => e.DisziplinApiId);
-
-           
-            modelBuilder.Entity<Group>()
-                .HasMany(e => e.Lessons)
-                .WithMany(e => e.Groups)
-                .Map(m => m.ToTable("LessonGroups").MapLeftKey("Group_ApiGroupId").MapRightKey("Lesson_Id"));
-
-            modelBuilder.Entity<LessonChanged>()
-                .HasMany(e => e.Lessons)
-                .WithOptional(e => e.LessonChangeds)
-                .HasForeignKey(e => e.LessonChangedId);
-
-            modelBuilder.Entity<Teacher>()
-                .HasMany(e => e.Lessons)
-                .WithOptional(e => e.Teachers)
-                .HasForeignKey(e => e.TeacherApiId);
-
         }
         
     }

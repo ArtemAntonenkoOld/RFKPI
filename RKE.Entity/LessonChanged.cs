@@ -14,6 +14,8 @@ namespace RKE.Entity
             Lessons = new HashSet<Lesson>();
         }
 
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         public int NumberOfLesson { get; set; }
@@ -24,8 +26,9 @@ namespace RKE.Entity
 
         public int? Week { get; set; }
 
-        public int? AudApiId{ get; set; }
-
+       
+        public int AudApiId{ get; set; }
+        [ForeignKey("AudApiId")]
         public virtual Aud Auds { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

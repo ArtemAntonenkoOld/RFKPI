@@ -16,7 +16,7 @@ namespace RKE.API.Models.AllLessonsApiModels
         public string discipline_name { get; set; }
         public int discipline { get; set; }
         public List<string> groups_names { get; set; }
-        public List<GroupForAllLessonModel> groups { get; set; }
+        public List<int> groups { get; set; }
         public List<string> teachers_short_names { get; set; }
         public List<int> teachers { get; set; }
         public List<string> rooms_full_names { get; set; }

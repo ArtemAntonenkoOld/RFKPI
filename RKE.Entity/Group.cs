@@ -11,7 +11,7 @@ namespace RKE.Entity
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Group()
         {
-            Lessons = new HashSet<Lesson>();
+            LessonGroups = new HashSet<LessonGroups>();
         }
 
         [Key]
@@ -27,6 +27,6 @@ namespace RKE.Entity
         
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Lesson> Lessons { get; set; }
+        public virtual ICollection<LessonGroups> LessonGroups { get; set; }
     }
 }

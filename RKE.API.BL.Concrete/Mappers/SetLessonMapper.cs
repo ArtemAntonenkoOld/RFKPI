@@ -25,7 +25,7 @@ namespace RKE.API.BL.Concrete.Mappers
                     Week = temp.week,
                     TeacherApiId=temp.teachers.FirstOrDefault(),
                     AudApiId=temp.rooms.FirstOrDefault(),
-                    Groups=_lessonGroupMapper.EntityToModel(temp.groups)
+                    LessonGroups=_lessonGroupMapper.EntityToModel(temp.groups)
                     
                  });
             }

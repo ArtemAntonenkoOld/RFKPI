@@ -6,70 +6,40 @@ using Quartz.Impl;
 using Quartz.Logging;
 
 using System.Collections.Specialized;
+using RKE.API.Models.AllLessonsApiModels;
+using System.Collections.Generic;
+using RestSharp;
+
 namespace RKE.OpenConsole
 {
     public class Program
     {
         private static void Main(string[] args)
         {
-
-            RunProgramRunExample().GetAwaiter().GetResult();
-
-            Console.WriteLine("Press any key to close the application");
-            Console.ReadKey();
-        }
-
-        private static async Task RunProgramRunExample()
-        {
-            try
+            List<ResultForAllLessonsModel> result = new List<ResultForAllLessonsModel>();
+            
+            RestClient client = new RestClient("http://api.rozklad.hub.kpi.ua/lessons/?limit=10");
+            for (int i=0;i<10;i++)
             {
-                // Grab the Scheduler instance from the Factory
-                NameValueCollection props = new NameValueCollection
+                var request = new RestRequest(Method.GET);
+
+                IRestResponse<RootObjectForAllLessonsModel> response2 = client.Execute<RootObjectForAllLessonsModel>(request);
+                if (response2.Data.next == null)
                 {
-                    { "quartz.serializer.type", "binary" }
+                    break;
                 };
-                StdSchedulerFactory factory = new StdSchedulerFactory(props);
-                IScheduler scheduler = await factory.GetScheduler();
+                foreach (var item in response2.Data.results)
+                {
+                    result.Add(item);
+                }
+                client = new RestClient(response2.Data.next);
 
-                // and start it off
-                await scheduler.Start();
-
-                // define the job and tie it to our HelloJob class
-                IJobDetail job = JobBuilder.Create<HelloJob>()
-                    .WithIdentity("job1", "group1")
-                    .Build();
-
-                // Trigger the job to run now, and then repeat every 10 seconds
-                ITrigger trigger = TriggerBuilder.Create()
-                    .WithIdentity("trigger1", "group1")
-                    .StartNow()
-                    .WithSimpleSchedule(x => x
-                        .WithIntervalInSeconds(10)
-                        .RepeatForever())
-                    .Build();
-
-                // Tell quartz to schedule the job using our trigger
-                await scheduler.ScheduleJob(job, trigger);
-
-                // some sleep to show what's happening
-             
-                // and last shut down the scheduler when you are ready to close your program
-              //  await scheduler.Shutdown();
-            }
-            catch (SchedulerException se)
+            } 
+            foreach(var item in result)
             {
-                Console.WriteLine(se);
+                Console.WriteLine(item.id);
             }
-        }
-
-        // simple log provider to get something to the console
-}
-
-    public class HelloJob : IJob
-    {
-        public async Task Execute(IJobExecutionContext context)
-        {
-            await Console.Out.WriteLineAsync("Greetings from HelloJob!");
+            Console.Read();
         }
     }
 }

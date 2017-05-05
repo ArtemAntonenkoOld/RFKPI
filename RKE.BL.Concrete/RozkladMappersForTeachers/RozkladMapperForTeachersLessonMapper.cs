@@ -22,7 +22,7 @@ namespace RKE.BL.Concrete.RozkladMappersForTeachers
                     Day = temp.Day,
                     Aud = temp.Auds.NumberOfAud,
                     NumberOfLesson = temp.NumberOfLesson,
-                    Group=_rozkladMapperForTeachersGroupMapper.EntityToModel(temp.Groups.ToList())
+                    Group=_rozkladMapperForTeachersGroupMapper.EntityToModel(temp.LessonGroups.ToList())
 
 
                 });

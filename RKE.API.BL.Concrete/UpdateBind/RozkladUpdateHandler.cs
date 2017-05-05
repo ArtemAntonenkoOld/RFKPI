@@ -15,6 +15,7 @@ using RKE.API.Models.AllTeachersApiModels;
 using RKE.API.Models.AllLessonsApiModels;
 using RKE.API.Models.AllAudsApiModels;
 using RKE.API.Models.AllDisziplinsApiModels;
+using System.Threading;
 
 namespace RKE.API.BL.Concrete.UpdateBind
 {
@@ -138,23 +139,22 @@ namespace RKE.API.BL.Concrete.UpdateBind
         private List<ResultForAllLessonsModel> GetAllLessons()
         {
             List<ResultForAllLessonsModel> result = new List<ResultForAllLessonsModel>();
-            RestClient client = new RestClient("http://api.rozklad.hub.kpi.ua/lessons/?limit=10");
-            do
-            {
+            RestClient client = new RestClient("http://api.rozklad.hub.kpi.ua/lessons/");
+           
+            for (int i = 0; i < 5; i++) { 
                 var request = new RestRequest(Method.GET);
 
-                IRestResponse<RootObjectForAllLessonsModel> response2 = client.Execute<RootObjectForAllLessonsModel>(request);
-                if (response2.Data.next == null)
-                {
-                    break;
-                };
-                foreach (var item in response2.Data.results)
-                {
-                    result.Add(item);
-                }
-                client = new RestClient(response2.Data.next);
-
-            } while (true);
+            IRestResponse<RootObjectForAllLessonsModel> response2 = client.Execute<RootObjectForAllLessonsModel>(request);
+            if (response2.Data.next == null)
+            {
+                i = 10;
+            };
+            foreach (var item in response2.Data.results)
+            {
+                result.Add(item);
+            }
+            client = new RestClient(response2.Data.next);
+        }
 
             return result;
         }
@@ -214,19 +214,24 @@ namespace RKE.API.BL.Concrete.UpdateBind
         }
         public async Task SetLessons()
         {
+
             SetLessonMapper mapper = new SetLessonMapper();
             var groups = mapper.ModelToEntity(GetAllLessons());
             foreach (var item in groups)
             {
-                if (await _lessonRepository.GetCountAsync(p => p.ApiId == item.Id) == 0)
+                var k = await _lessonRepository.FetchByAsync(p => p.ApiId == item.Id);
+                if (k.Count == 0)
                 {
+
                     await _lessonRepository.AddAsync(item);
-                    await _lessonRepository.SaveAsync();
                 }
+               
             }
+            await _lessonRepository.SaveAsync();
+        }
             
         }
 
 
     }
-}
+

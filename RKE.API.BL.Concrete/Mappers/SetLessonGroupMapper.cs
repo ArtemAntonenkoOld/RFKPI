@@ -10,14 +10,15 @@ namespace RKE.API.BL.Concrete.Mappers
 {
     public class SetLessonGroupMapper
     {
-        public List<Group> EntityToModel(List<GroupForAllLessonModel> entity)
+        public List<LessonGroups> EntityToModel(List<int> entity)
         {
-            List<Group> l = new List<Group>();
+            List<LessonGroups> l = new List<LessonGroups>();
             foreach (var temp in entity)
             {
-                l.Add(new Group()
+                l.Add(new LessonGroups()
                 {
-                    ApiGroupId=temp.Id
+                    ApiGroupId=temp
+                    
                 });
             }
             return l;

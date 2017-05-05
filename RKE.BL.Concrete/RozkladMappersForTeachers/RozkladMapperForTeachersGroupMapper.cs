@@ -10,14 +10,14 @@ namespace RKE.BL.Concrete.RozkladMappersForTeachers
 {
     public class RozkladMapperForTeachersGroupMapper
     {
-        public List<GroupModelForTeachersModel> EntityToModel(List<Group> entity)
+        public List<GroupModelForTeachersModel> EntityToModel(List<LessonGroups> entity)
         {
             List<GroupModelForTeachersModel> l = new List<GroupModelForTeachersModel>();
             foreach (var temp in entity)
             {
                 l.Add(new GroupModelForTeachersModel()
                 {
-                    Name=temp.NameOfGroup
+                    Name=temp.Groups.NameOfGroup
                 });
             }
             return l;

@@ -76,6 +76,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\RKE.APIModels\RKE.API.Models.csproj">
+      <Project>{DEDA4DD2-F14A-47CF-9DF8-3C5348FC9ACB}</Project>
+      <Name>RKE.API.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RKE.Dal.Abstract\RKE.DAL.Abstract.csproj">
       <Project>{1e36cf47-8851-48a0-8778-1957b9e1c96a}</Project>
       <Name>RKE.DAL.Abstract</Name>

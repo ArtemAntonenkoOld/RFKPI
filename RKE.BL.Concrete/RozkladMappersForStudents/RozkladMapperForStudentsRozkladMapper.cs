@@ -19,15 +19,15 @@ namespace RKE.BL.Concrete.RozkladMappersForStudents
                 List<Lesson> session=new List<Lesson>();
                 List<Lesson> lesson = new List<Lesson>(); ;
                 k.GroupName = item.NameOfGroup;
-                foreach (var lessonItem in item.Lessons)
+                foreach (var lessonItem in item.LessonGroups)
                 {
-                    if (lessonItem.TypeOfLesson != 5)
+                    if (lessonItem.Lessons.TypeOfLesson != 5)
                     {
-                        lesson.Add(lessonItem);
+                        lesson.Add(lessonItem.Lessons);
                     }
                     else
                     {
-                        session.Add(lessonItem);
+                        session.Add(lessonItem.Lessons);
                     }
                 }
                 k.LessonModel = rozkladMapperForStudentsLessonMapper.EntityToModel(lesson);

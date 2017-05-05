@@ -8,17 +8,18 @@ namespace RKE.BL.Concrete.RozkladMappersForStudents
 {
     public class RozkladMapperForExternalStudentsLessonMapper
     {
-        public List<RozkladModelForExternalStudentsLessonsForExternalStudentsModel> EntityToModel(List<Lesson> entity)
+        public List<RozkladModelForExternalStudentsLessonsForExternalStudentsModel> EntityToModel(List<LessonGroups> entity)
         {
             List<RozkladModelForExternalStudentsLessonsForExternalStudentsModel> p = new List<RozkladModelForExternalStudentsLessonsForExternalStudentsModel>();
             foreach (var temp in entity)
             {
                 p.Add(new RozkladModelForExternalStudentsLessonsForExternalStudentsModel()
                 {
-                    Aud=temp.Auds.NumberOfAud,
-                    Date=temp.Date,
-                    NameOfTeacher=temp.Teachers.ShortNameOfTeacherWithDegree,
-                    NumberOfLesson=temp.NumberOfLesson
+                    
+                    Aud=temp.Lessons.Auds.NumberOfAud,
+                    Date=temp.Lessons.Date,
+                    NameOfTeacher=temp.Lessons.Teachers.ShortNameOfTeacherWithDegree,
+                    NumberOfLesson=temp.Lessons.NumberOfLesson
 
                 });
             }

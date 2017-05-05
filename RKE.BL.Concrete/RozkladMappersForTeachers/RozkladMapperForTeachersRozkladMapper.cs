@@ -28,7 +28,7 @@ namespace RKE.BL.Concrete.RozkladMappersForTeachers
                     {
                         lesson.Add(lessonItem);
                     }
-                    else if (lessonItem.Groups.FirstOrDefault().Type==1)
+                    else if (lessonItem.LessonGroups.FirstOrDefault().Groups.Type==1)
                     {
                         external.Add(lessonItem);
                     }
