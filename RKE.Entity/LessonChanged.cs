@@ -5,17 +5,14 @@ namespace RKE.Entity
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
-
+    /*
     public partial class LessonChanged
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public LessonChanged()
+        LessonChanged()
         {
-            Lessons = new HashSet<Lesson>();
+            Lesson = new HashSet<Lesson>();
         }
-
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+       // [Key]
         public int Id { get; set; }
 
         public int NumberOfLesson { get; set; }
@@ -30,8 +27,6 @@ namespace RKE.Entity
         public int AudApiId{ get; set; }
         [ForeignKey("AudApiId")]
         public virtual Aud Auds { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Lesson> Lessons { get; set; }
+        public virtual ICollection<Lesson> Lesson { get; set; }
     }
-}
+*/}

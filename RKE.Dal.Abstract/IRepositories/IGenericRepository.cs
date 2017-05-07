@@ -10,7 +10,9 @@ namespace RKE.DAL.Abstract
     public interface IGenericRepository<TEntity>
     {
         Task<TEntity> AddAsync(TEntity entity);
+
         Task UpdateAsync(TEntity entity);
+        
         Task<TEntity> DeleteAsync(TEntity entity);
 
         Task<IEnumerable<TEntity>> GetAllAsync();
@@ -26,5 +28,7 @@ namespace RKE.DAL.Abstract
         Task<List<TEntity>> PaggingFetchByAsync(Expression<Func<TEntity, bool>> predicate, int startIndex, int count);
 
         Task SaveAsync();
+        Task<TEntity> FindAsync(Expression<Func<TEntity, bool>> match);
+        Task<int> AddOrUpdates(TEntity entity, Expression<Func<TEntity, bool>> predicate);
     }
 }

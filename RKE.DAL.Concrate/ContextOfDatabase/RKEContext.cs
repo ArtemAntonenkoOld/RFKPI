@@ -25,8 +25,8 @@ namespace RKE.DAL.Concrate.ContextOfDatabase
         public virtual IDbSet<Aud> Auds { get; set; }
         public virtual IDbSet<Disziplin> Disziplins { get; set; }
         public virtual IDbSet<Group> Groups { get; set; }
-        public virtual IDbSet<LessonChanged> LessonChangeds { get; set; }
-        public virtual IDbSet<Lesson> Lessons { get; set; }
+        public virtual IDbSet<Lesson> Lessons { get; set; }        
+       // public virtual IDbSet<LessonChanged> LessonChangeds { get; set; }
         public virtual IDbSet<Teacher> Teachers { get; set; }
         public virtual IDbSet<LessonGroups> LessonGroups { get; set; }
         public IDbSet<TEntity> Set<TEntity>() where TEntity : class
@@ -48,10 +48,8 @@ namespace RKE.DAL.Concrate.ContextOfDatabase
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<IdentityUserLogin>().HasKey<string>(l => l.UserId);
-            modelBuilder.Entity<IdentityRole>().HasKey<string>(r => r.Id);
-            modelBuilder.Entity<IdentityUserRole>().HasKey(r => new { r.RoleId, r.UserId });
-            
+            base.OnModelCreating(modelBuilder);
+           
         }
         
     }

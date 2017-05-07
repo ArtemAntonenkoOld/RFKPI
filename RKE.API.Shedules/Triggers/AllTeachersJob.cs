@@ -18,9 +18,9 @@ namespace RKE.API.Shedules.Triggers
             _logic = logic;
         }
         
-        public async Task Execute()
+        public void Execute()
         {
-            await _logic.SetTeachers();
+             _logic.SetTeachers();
         }
     }
 }

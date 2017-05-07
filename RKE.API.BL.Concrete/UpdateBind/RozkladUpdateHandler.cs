@@ -21,7 +21,7 @@ namespace RKE.API.BL.Concrete.UpdateBind
 {
 
     [BindsTo(typeof(IRozkladUpdateHandler))]
-    public class RozkladUpdateHandler: IRozkladUpdateHandler
+    public class RozkladUpdateHandler : IRozkladUpdateHandler
     {
         private readonly IGroupRepository _groupRepository;
         private readonly IAudRepository _audRepository;
@@ -35,13 +35,13 @@ namespace RKE.API.BL.Concrete.UpdateBind
                 IDisziplinRepository disziplinRepository,
                 ILessonRepository lessonRepository
              )
-            {
-                _disziplinRepository = disziplinRepository;
-                _teacherRepository = teacherRepository;
-                _groupRepository = groupRepository;
-                _audRepository= audRepository;
-                _lessonRepository = lessonRepository;
-            }
+        {
+            _disziplinRepository = disziplinRepository;
+            _teacherRepository = teacherRepository;
+            _groupRepository = groupRepository;
+            _audRepository = audRepository;
+            _lessonRepository = lessonRepository;
+        }
 
 
         private List<ResultForAllGroupsModel> GetAllGroups()
@@ -51,18 +51,18 @@ namespace RKE.API.BL.Concrete.UpdateBind
             do
             {
                 var request = new RestRequest(Method.GET);
-               
+
                 IRestResponse<RootObjectForAllGroups> response2 = client.Execute<RootObjectForAllGroups>(request);
                 if (response2.Data.next == null)
                 {
                     break;
                 };
-                foreach(var item in response2.Data.results)
+                foreach (var item in response2.Data.results)
                 {
                     result.Add(item);
                 }
                 client = new RestClient(response2.Data.next);
-                
+
             } while (true);
 
             return result;
@@ -140,21 +140,21 @@ namespace RKE.API.BL.Concrete.UpdateBind
         {
             List<ResultForAllLessonsModel> result = new List<ResultForAllLessonsModel>();
             RestClient client = new RestClient("http://api.rozklad.hub.kpi.ua/lessons/");
-           
-            for (int i = 0; i < 5; i++) { 
+
+            do {
                 var request = new RestRequest(Method.GET);
 
-            IRestResponse<RootObjectForAllLessonsModel> response2 = client.Execute<RootObjectForAllLessonsModel>(request);
-            if (response2.Data.next == null)
-            {
-                i = 10;
-            };
-            foreach (var item in response2.Data.results)
-            {
-                result.Add(item);
-            }
-            client = new RestClient(response2.Data.next);
-        }
+                IRestResponse<RootObjectForAllLessonsModel> response2 = client.Execute<RootObjectForAllLessonsModel>(request);
+                if (response2.Data.next == null)
+                {
+                    break;
+                };
+                foreach (var item in response2.Data.results)
+                {
+                    result.Add(item);
+                }
+                client = new RestClient(response2.Data.next);
+            } while (true);
 
             return result;
         }
@@ -165,13 +165,9 @@ namespace RKE.API.BL.Concrete.UpdateBind
             var groups = mapper.ModelToEntity(GetAllGroups());
             foreach (var item in groups)
             {
-                
-                if (await _groupRepository.GetCountAsync(p => p.ApiGroupId == item.Id)==0) {
-                    await _groupRepository.AddAsync(item);
-                    await _groupRepository.SaveAsync();
-                }
+                await _groupRepository.AddOrUpdates(item, p => p.ApiGroupId == item.ApiGroupId);
             }
-            
+
         }
         public async Task SetTeachers()
         {
@@ -179,12 +175,10 @@ namespace RKE.API.BL.Concrete.UpdateBind
             var groups = mapper.ModelToEntity(GetAllTeachers());
             foreach (var item in groups)
             {
-                if (await _teacherRepository.GetCountAsync(p => p.ApiId==item.Id) == 0)
-                {
-                    await _teacherRepository.AddAsync(item);
-                    await _teacherRepository.SaveAsync();
-                }
+                await _teacherRepository.AddOrUpdates(item, p => p.ApiId == item.ApiId);
+
             }
+
         }
         public async Task SetAuds()
         {
@@ -192,11 +186,7 @@ namespace RKE.API.BL.Concrete.UpdateBind
             var groups = mapper.ModelToEntity(GetAllAuds());
             foreach (var item in groups)
             {
-                if (await _audRepository.GetCountAsync(p => p.IdOfApi == item.Id) == 0)
-                {
-                    await _audRepository.AddAsync(item);
-                    await _audRepository.SaveAsync();
-                }
+                await _audRepository.AddOrUpdates(item, p => p.IdOfApi == item.IdOfApi);
             }
         }
         public async Task SetDisziplins()
@@ -205,11 +195,7 @@ namespace RKE.API.BL.Concrete.UpdateBind
             var groups = mapper.ModelToEntity(GetAllDisziplins());
             foreach (var item in groups)
             {
-                if (await _disziplinRepository.GetCountAsync(p => p.IdOfApi == item.Id) == 0)
-                {
-                    await _disziplinRepository.AddAsync(item);
-                    await _disziplinRepository.SaveAsync();
-                }
+                await _disziplinRepository.AddOrUpdates(item, p => p.IdOfApi == item.IdOfApi);
             }
         }
         public async Task SetLessons()
@@ -217,21 +203,14 @@ namespace RKE.API.BL.Concrete.UpdateBind
 
             SetLessonMapper mapper = new SetLessonMapper();
             var groups = mapper.ModelToEntity(GetAllLessons());
+
             foreach (var item in groups)
             {
-                var k = await _lessonRepository.FetchByAsync(p => p.ApiId == item.Id);
-                if (k.Count == 0)
-                {
-
-                    await _lessonRepository.AddAsync(item);
-                }
-               
+                await _lessonRepository.AddOrUpdates(item, p => p.ApiId == item.ApiId);
             }
-            await _lessonRepository.SaveAsync();
-        }
-            
+
         }
 
 
     }
-
+}

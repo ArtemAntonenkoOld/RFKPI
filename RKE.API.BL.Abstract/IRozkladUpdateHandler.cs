@@ -9,7 +9,7 @@ namespace RKE.API.BL.Abstract
 {
     public interface IRozkladUpdateHandler
     {
-        Task SetGroups();
+         Task SetGroups();
         Task SetTeachers();
         Task SetLessons();
         Task SetAuds();

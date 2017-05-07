@@ -8,14 +8,12 @@ namespace RKE.Entity
 
     public partial class Group
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Group()
+         public Group()
         {
             LessonGroups = new HashSet<LessonGroups>();
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ApiGroupId { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -26,7 +24,6 @@ namespace RKE.Entity
         public int Type { get; set; }
         
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LessonGroups> LessonGroups { get; set; }
+         public virtual ICollection<LessonGroups> LessonGroups { get; set; }
     }
 }

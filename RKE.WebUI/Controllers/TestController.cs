@@ -16,7 +16,7 @@ namespace RKE.WebUI.Controllers
         }
         public async Task SetTeachers()
         {
-            await _logic.SetTeachers();
+           await  _logic.SetTeachers();
         }
         public async Task SetGroups()
         {
@@ -29,11 +29,19 @@ namespace RKE.WebUI.Controllers
         }
         public async Task SetAuds()
         {
-            await _logic.SetAuds();
+             await _logic.SetAuds();
         }
         public async Task SetDisziplins()
         {
+             await _logic.SetDisziplins();
+        }
+        public async Task SetAll()
+        {
+            await _logic.SetAuds();
             await _logic.SetDisziplins();
+            await _logic.SetGroups();
+            await _logic.SetTeachers();
+            await _logic.SetLessons();
         }
     }
 

@@ -8,14 +8,12 @@ namespace RKE.Entity
 
     public partial class Disziplin
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Disziplin()
         {
-            Lessons = new HashSet<Lesson>();
+            this.Lessons = new HashSet<Lesson>();
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int IdOfApi { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -25,8 +23,7 @@ namespace RKE.Entity
 
         public string FullNameOfDisziplin { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Lesson> Lessons { get; set; }
+         public virtual ICollection<Lesson> Lessons { get; set; }
         
     }
 }

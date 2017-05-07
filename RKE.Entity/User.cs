@@ -12,8 +12,8 @@ namespace RKE.Entity
     {
         public User()
         {
-            this.LessonChanged = new HashSet<LessonChanged>();
+          //  this.LessonChanged = new HashSet<LessonChanged>();
         }
-        public ICollection<LessonChanged> LessonChanged { get; set; }
+        //public ICollection<LessonChanged> LessonChanged { get; set; }
     }
 }

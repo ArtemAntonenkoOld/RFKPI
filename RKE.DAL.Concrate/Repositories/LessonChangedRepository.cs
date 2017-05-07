@@ -9,11 +9,11 @@ using RKE.DAL.Abstract.IRepositories;
 
 namespace RKE.DAL.Concrate.Repositories
 {
-    public class LessonChangedRepository : GenericRepository<LessonChanged>, ILessonChangedRepository
+    /*public class LessonChangedRepository : GenericRepository<LessonChanged>, ILessonChangedRepository
     {
         public LessonChangedRepository(IRKEContext context) : base(context)
         {
 
         }
-    }
+    }*/
 }

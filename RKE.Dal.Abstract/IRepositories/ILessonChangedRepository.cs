@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RKE.DAL.Abstract.IRepositories
 {
-    public interface ILessonChangedRepository: IGenericRepository<LessonChanged>
+  /*  public interface ILessonChangedRepository: IGenericRepository<LessonChanged>
     {
-    }
+    }*/
 }

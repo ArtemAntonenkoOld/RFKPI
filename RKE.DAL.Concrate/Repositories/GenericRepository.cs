@@ -32,17 +32,22 @@ namespace RKE.DAL.Concrate.Repositories
 
         public virtual async Task<TEntity> AddAsync(TEntity entity)
         {
-            return Context.Set<TEntity>().Add(entity);
+            Context.Set<TEntity>().Add(entity);
+            await Context.SaveChangesAsync();
+            return entity;
+            
         }
-      
         public virtual async Task UpdateAsync(TEntity entity)
         {
             Context.Entry(entity).State = EntityState.Modified;
+            await Context.SaveChangesAsync();
         }
 
         public virtual async Task<TEntity> DeleteAsync(TEntity entity)
         {
-            return Context.Set<TEntity>().Remove(entity);
+            Context.Set<TEntity>().Remove(entity);
+            await Context.SaveChangesAsync();
+            return entity;
         }
 
         public virtual async Task<IEnumerable<TEntity>> GetAllAsync()
@@ -100,5 +105,49 @@ namespace RKE.DAL.Concrate.Repositories
         {
             await Context.SaveChangesAsync();
         }
+
+        public virtual async Task<TEntity> FindAsync(Expression<Func<TEntity, bool>> match)
+        {
+            return await Context.Set<TEntity>().SingleOrDefaultAsync(match);
+        }
+        public virtual async Task<TEntity> AddOrUpdate(TEntity entity, Expression<Func<TEntity, bool>> predicate)
+        {
+            if (entity == null)
+                return null;
+
+            Task<TEntity> find =  Context.Set<TEntity>().SingleOrDefaultAsync(predicate);
+            TEntity existing = await find;
+            if (existing != null)
+            {
+                Context.Entry(existing).CurrentValues.SetValues(entity);
+                Context.SaveChanges();
+            }
+            else
+            {
+                Context.Set<TEntity>().Add(entity);
+                Context.SaveChanges();
+            }
+            return existing;
+        }
+        public virtual async Task<int> AddOrUpdates(TEntity entity, Expression<Func<TEntity, bool>> predicate)
+        {
+            if (entity == null)
+                return await Context.SaveChangesAsync(); 
+
+            Task<TEntity> find = Context.Set<TEntity>().SingleOrDefaultAsync(predicate);
+            TEntity existing = await find;
+            if (existing != null)
+            {
+              //  _context.Entry(existing).CurrentValues.SetValues(entity);
+
+            }
+            else
+            {
+                Context.Set<TEntity>().Add(entity);
+                
+            }
+            return await Context.SaveChangesAsync();
+        }
+
     }
 }
