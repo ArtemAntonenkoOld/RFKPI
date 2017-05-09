@@ -11,6 +11,6 @@ namespace RKE.UIModels.RozkladModelsForTeachers
         public DateTime Date { get; set; }
         public string NameOfLesson { get; set; }
         public string Aud { get; set; }
-        public int NumberOfLesson { get; set; }
+        
     }
 }

@@ -20,7 +20,7 @@ namespace RKE.Entity
 
         
 
-        public int NumberOfLesson { get; set; }
+        public int? NumberOfLesson { get; set; }
 
         public int? Day { get; set; }
 

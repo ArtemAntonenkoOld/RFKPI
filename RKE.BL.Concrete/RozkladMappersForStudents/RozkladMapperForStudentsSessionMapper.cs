@@ -16,7 +16,6 @@ namespace RKE.BL.Concrete.RozkladMappersForStudents
                     Aud=temp.Auds.NumberOfAud,
                     Date=temp.Date,
                     Disziplin=temp.Disziplins.NameOfDisziplin,
-                    NumberOfLesson=temp.NumberOfLesson,
                     Teacher=temp.Teachers.FullNameOfTeacher
 
                 });

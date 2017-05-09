@@ -19,10 +19,13 @@ namespace RKE.BL.Concrete.RozkladMappersForTeachers
             {
                 p.Add(new RozkladModelForTeachersLessonModel()
                 {
-                    Day = temp.Day,
-                    Aud = temp.Auds.NumberOfAud,
-                    NumberOfLesson = temp.NumberOfLesson,
-                    Group=_rozkladMapperForTeachersGroupMapper.EntityToModel(temp.LessonGroups.ToList())
+                    Day = (int)temp.Day,
+                    Aud = (string)temp.Auds.NumberOfAud,
+                    NumberOfLesson = (int)temp.NumberOfLesson,
+                    Group=_rozkladMapperForTeachersGroupMapper.EntityToModel(temp.LessonGroups.ToList()),
+                    Type = temp.TypeOfLesson,
+                    Week=temp.Week
+
 
 
                 });

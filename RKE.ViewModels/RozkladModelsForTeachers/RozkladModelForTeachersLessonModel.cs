@@ -7,7 +7,8 @@ namespace RKE.UIModels.RozkladModelsForTeachers
         public int? Day { get; set; }
         public int NumberOfLesson { get; set; }
         public string Aud { get; set; }
-        public string Type { get; set; } //Lekzia
+        public int Type { get; set; } //Lekzia
+        public int? Week { get; set; }
         public List<GroupModelForTeachersModel> Group { get; set; }
     }
 }

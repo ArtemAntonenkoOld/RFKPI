@@ -17,7 +17,7 @@ namespace RKE.BL.Concrete.RozkladMappersForStudents
             {
                 RozkladModelForStudentsRozkladModel k = new RozkladModelForStudentsRozkladModel();
                 List<Lesson> session=new List<Lesson>();
-                List<Lesson> lesson = new List<Lesson>(); ;
+                List<Lesson> lesson = new List<Lesson>(); 
                 k.GroupName = item.NameOfGroup;
                 foreach (var lessonItem in item.LessonGroups)
                 {
