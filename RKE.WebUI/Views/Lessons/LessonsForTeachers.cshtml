@@ -7,8 +7,8 @@
         <div class="container">
     <div>@Model.FullName</div>
     <div class="col-md-12">
-       
-            <table class="table table-responsive table-striped table-bordered ">
+        @foreach (var item in Model.LessonModel) {
+        <table class="table table-responsive table-striped table-bordered ">
                 <tbody>
                     <tr>
                         <td></td>
@@ -21,16 +21,20 @@
                     </tr>
                     <tr>
                         @for (int i = 0; i < 6; i++)
-                {
+                        {
                         <tr>
                             <td></td>
                             @for (int j = 0; j < 6; j++)
                             {
                                 <td class="col-md-2">
-                                    @if (!Model.LessonModel[i][j].IsNullOrEmpty() && Model.LessonModel[i][j].Week != 2)
+                                    @if (!item[i][j].IsNullOrEmpty())
                                     {
-                                        
-                                    } ;  
+                                        @item[i][j].Aud
+                                        @item[i][j].NameOfDisziplin
+                                        foreach (var itemGroup in item[i][j].Group) { 
+                                            @itemGroup.Name
+                                        }
+                                    } 
                                 </td>
 
                             }
@@ -40,7 +44,7 @@
 
                     </tbody>
                 </table>
-       
+        }
     </div>
             
     @if (@Model.SessionModel.IsNullOrEmpty())

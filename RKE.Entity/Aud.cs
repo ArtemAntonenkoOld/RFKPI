@@ -13,9 +13,9 @@ namespace RKE.Entity
             this.Lessons = new HashSet<Lesson>();
         //    this.LessonChangeds = new HashSet<LessonChanged>();
         }
-
         [Key]
-        public int IdOfApi { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int ApiId { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }

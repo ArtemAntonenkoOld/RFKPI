@@ -10,7 +10,7 @@ namespace RKE.BL.Concrete.RozkladMappersForTeachers
 {
     public class RozkladMapperForTeachersLessonMapper
     {
-        public RozkladModelForTeachersLessonModel[][] EntityToModel(List<Lesson> entity)
+        public List<RozkladModelForTeachersLessonModel[][]> EntityToModel(List<Lesson> entity)
         {
 
             RozkladMapperForTeachersGroupMapper _rozkladMapperForTeachersGroupMapper = new RozkladMapperForTeachersGroupMapper();
@@ -24,23 +24,33 @@ namespace RKE.BL.Concrete.RozkladMappersForTeachers
                     NumberOfLesson = (int)temp.NumberOfLesson,
                     Group=_rozkladMapperForTeachersGroupMapper.EntityToModel(temp.LessonGroups.ToList()),
                     Type = temp.TypeOfLesson,
-                    Week=temp.Week
+                    Week=temp.Week,
+                    NameOfDisziplin=temp.Disziplins.NameOfDisziplin
 
 
 
                 });
             }
             RozkladModelForTeachersLessonModel[][] obj = new RozkladModelForTeachersLessonModel[6][];
+            RozkladModelForTeachersLessonModel[][] obj2 = new RozkladModelForTeachersLessonModel[6][];
             for (int i = 0; i < 6; i++)
             {
                 obj[i] = new RozkladModelForTeachersLessonModel[7];
+                obj2[i] = new RozkladModelForTeachersLessonModel[7];
             }
 
             foreach (var item in p)
             {
-                obj[(int)item.Day - 1][item.NumberOfLesson - 1] = item;
+                if (item.Week == 1)
+                {
+                    obj[(int)item.Day - 1][item.NumberOfLesson - 1] = item;
+                }
+                else
+                {
+                    obj2[(int)item.Day - 1][item.NumberOfLesson - 1] = item;
+                }
             }
-            return obj;
+            return new List<RozkladModelForTeachersLessonModel[][]> { obj,obj2};
         }
 
     }

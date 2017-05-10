@@ -14,8 +14,10 @@ namespace RKE.Entity
         }
 
         [Key]
-        public int ApiGroupId { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int ApiId { get; set; }
 
+        
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 

@@ -49,7 +49,7 @@ namespace RKE.DAL.Concrate.ContextOfDatabase
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-           
+         
         }
         
     }

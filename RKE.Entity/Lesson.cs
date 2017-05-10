@@ -12,14 +12,11 @@ namespace RKE.Entity
         {
             LessonGroups = new HashSet<LessonGroups>();
         }
-        [Key]
         public int ApiId { get; set; }
-
+        [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-
-        
-
+              
         public int? NumberOfLesson { get; set; }
 
         public int? Day { get; set; }

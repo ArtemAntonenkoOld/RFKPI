@@ -14,6 +14,7 @@ namespace RKE.Entity
         }
 
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ApiId { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

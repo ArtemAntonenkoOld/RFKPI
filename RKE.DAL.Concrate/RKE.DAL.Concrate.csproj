@@ -87,6 +87,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContextOfDatabase\RKEContext.cs" />
+    <Compile Include="Migrations\201705101358533_32.cs" />
+    <Compile Include="Migrations\201705101358533_32.Designer.cs">
+      <DependentUpon>201705101358533_32.cs</DependentUpon>
+    </Compile>
     <Compile Include="Repositories\AudRepository.cs" />
     <Compile Include="Repositories\DisziplinRepository.cs" />
     <Compile Include="Repositories\LessonChangedRepository.cs" />
@@ -122,6 +126,11 @@
       <Project>{b21a4048-f59c-428b-8372-20139c32f17a}</Project>
       <Name>RKE.IOC.Manager</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201705101358533_32.resx">
+      <DependentUpon>201705101358533_32.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

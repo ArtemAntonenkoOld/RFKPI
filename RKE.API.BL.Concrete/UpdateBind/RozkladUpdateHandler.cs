@@ -165,7 +165,7 @@ namespace RKE.API.BL.Concrete.UpdateBind
             var groups = mapper.ModelToEntity(GetAllGroups());
             foreach (var item in groups)
             {
-                await _groupRepository.AddOrUpdates(item, p => p.ApiGroupId == item.ApiGroupId);
+                await _groupRepository.AddOrUpdates(item, p => p.ApiId == item.ApiId);
             }
 
         }
@@ -186,7 +186,7 @@ namespace RKE.API.BL.Concrete.UpdateBind
             var groups = mapper.ModelToEntity(GetAllAuds());
             foreach (var item in groups)
             {
-                await _audRepository.AddOrUpdates(item, p => p.IdOfApi == item.IdOfApi);
+                await _audRepository.AddOrUpdates(item, p => p.ApiId == item.ApiId);
             }
         }
         public async Task SetDisziplins()
@@ -195,7 +195,7 @@ namespace RKE.API.BL.Concrete.UpdateBind
             var groups = mapper.ModelToEntity(GetAllDisziplins());
             foreach (var item in groups)
             {
-                await _disziplinRepository.AddOrUpdates(item, p => p.IdOfApi == item.IdOfApi);
+                await _disziplinRepository.AddOrUpdates(item, p => p.ApiId == item.ApiId);
             }
         }
         public async Task SetLessons()

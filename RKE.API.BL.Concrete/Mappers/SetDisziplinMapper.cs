@@ -18,7 +18,7 @@ namespace RKE.API.BL.Concrete.Mappers
                 p.Add(new Disziplin()
                 {
                     FullNameOfDisziplin=temp.full_name,
-                    IdOfApi=temp.id,
+                    ApiId=temp.id,
                     NameOfDisziplin=temp.name
                 });
             }

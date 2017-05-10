@@ -19,7 +19,7 @@ namespace RKE.API.BL.Concrete.Mappers
                 p.Add(new Group()
                 {
                     NameOfGroup=temp.name,
-                    ApiGroupId=temp.id,
+                    ApiId=temp.id,
                     Type=temp.type                    
                     
                 });

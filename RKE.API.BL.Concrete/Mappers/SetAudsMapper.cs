@@ -18,7 +18,7 @@ namespace RKE.API.BL.Concrete.Mappers
             {
                 p.Add(new Aud()
                 {
-                    IdOfApi=temp.id,
+                    ApiId=temp.id,
                     NumberOfAud =temp.name
                     
                 });
