@@ -5,14 +5,15 @@ namespace RKE.Entity
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
-    /*
+    
     public partial class LessonChanged
     {
         LessonChanged()
         {
             Lesson = new HashSet<Lesson>();
         }
-       // [Key]
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         public int NumberOfLesson { get; set; }
@@ -23,10 +24,9 @@ namespace RKE.Entity
 
         public int? Week { get; set; }
 
-       
         public int AudApiId{ get; set; }
         [ForeignKey("AudApiId")]
         public virtual Aud Auds { get; set; }
         public virtual ICollection<Lesson> Lesson { get; set; }
     }
-*/}
+}

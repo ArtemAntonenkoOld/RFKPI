@@ -110,6 +110,7 @@
     <Compile Include="Core\DIRealization\OurRealization.cs" />
     <Compile Include="Core\DIRealization\RefinedRealization.cs" />
     <Compile Include="Core\DIRealization\WindsorRealization.cs" />
+    <Compile Include="Core\Factories\WindsorHangfireJobActivator.cs" />
     <Compile Include="Core\Factories\WinsdorControllerFactory.cs" />
     <Compile Include="Core\IocMannager.cs" />
     <Compile Include="Core\ServiceLocation\ScopedServiceGetter.cs" />

@@ -20,6 +20,14 @@ namespace RKE.WebUI.Controllers
         {
             
         }
+        public ActionResult AddLesson()
+        {
+            return View("AddExternalLesson");
+        }
+        public ActionResult AddLesson(string[] skills)
+        {
+            return View("AddExternalLesson");
+        }
 
     }
 }

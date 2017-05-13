@@ -41,6 +41,8 @@ namespace RKE.Entity
         [ForeignKey("DisziplinApiId")]
         public virtual Disziplin Disziplins { get; set; }
         
+        [ForeignKey("LessonChangdId")]
+        public virtual LessonChanged LessonChanged { get; set; }
         [ForeignKey("TeacherApiId")]
         public virtual Teacher Teachers { get; set; }
         public virtual ICollection<LessonGroups> LessonGroups { get; set; }
