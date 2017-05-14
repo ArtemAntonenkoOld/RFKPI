@@ -15,10 +15,11 @@ namespace RKE.BL.Concrete.RozkladMappersForStudents
             {
                 p.Add(new RozkladModelForExternalStudentsLessonsForExternalStudentsModel()
                 {
-                    
-                    Aud=temp.Lessons.Auds.NumberOfAud,
-                    Date=temp.Lessons.Date,
-                    NameOfTeacher=temp.Lessons.Teachers.ShortNameOfTeacherWithDegree,
+
+                    Aud = temp.Lessons.Auds.NumberOfAud,
+                    Date = temp.Lessons.Date,
+                    NameOfTeacher = temp.Lessons.Teachers.ShortNameOfTeacherWithDegree,
+                    Disziplin = temp.Lessons.Disziplins.NameOfDisziplin
                    
                 });
             }

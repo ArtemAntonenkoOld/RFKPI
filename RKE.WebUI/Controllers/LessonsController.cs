@@ -27,12 +27,13 @@ namespace RKE.WebUI.Controllers
             if (!text.IsNullOrEmpty())
             {
                 Regex regex = new Regex(@"\d");
+                Regex regexForExternal = new Regex(@"-з\d");
                 MatchCollection match = regex.Matches(text);
 
-                if (text.EndsWith("з"))
+                if (regexForExternal.IsMatch(text))
                 {
-
-                    return View("LessonsForExternalStudents");
+                    var re = await _logic.GetByExternalGroup(text);
+                    return View("LessonsForExternalStudents",re);
 
                 }
                 else if (match.IsNullOrEmpty())

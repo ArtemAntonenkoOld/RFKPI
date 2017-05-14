@@ -41,6 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CRUDLessonForExternalModels\CRUDLessonForExternalModelsAudsModel.cs" />
+    <Compile Include="CRUDLessonForExternalModels\CRUDLessonForExternalModelsDataModel.cs" />
+    <Compile Include="CRUDLessonForExternalModels\CRUDLessonForExternalModelsDisziplinModel.cs" />
+    <Compile Include="CRUDLessonForExternalModels\CRUDLessonForExternalModelsGroupsModel.cs" />
+    <Compile Include="CRUDLessonForExternalModels\CRUDLessonForExternalModelsTeachersModel.cs" />
     <Compile Include="FindGroupsModel\FindGroupsModel.cs" />
     <Compile Include="RozkladModelForExternalStudents\RozkladModelForExternalStudentsLessonsForExternalStudentsModel.cs" />
     <Compile Include="RozkladModelForExternalStudents\RozkladModelForExternalStudentsRozkladModel.cs" />

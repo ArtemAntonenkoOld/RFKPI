@@ -41,6 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CRUDMappersForExternalStudents\CRUDMappersForExternalStudentsAudsMapper.cs" />
+    <Compile Include="CRUDMappersForExternalStudents\CRUDMappersForExternalStudentsDataMapper.cs" />
+    <Compile Include="CRUDMappersForExternalStudents\CRUDMappersForExternalStudentsDisziplinsMapper.cs" />
+    <Compile Include="CRUDMappersForExternalStudents\CRUDMappersForExternalStudentsGroupsMapper.cs" />
+    <Compile Include="CRUDMappersForExternalStudents\CRUDMappersForExternalStudentsTeachersMapper.cs" />
+    <Compile Include="CRUDMappersForExternalStudents\CRUDMappersForExternalStudentsLessonGroupsMapper.cs" />
+    <Compile Include="DataBind\CRUDDataHandler.cs" />
     <Compile Include="DataBind\RestDataHandler.cs" />
     <Compile Include="DataBind\RozkladHandler.cs" />
     <Compile Include="FindGroups\FindGroupsMapper.cs" />

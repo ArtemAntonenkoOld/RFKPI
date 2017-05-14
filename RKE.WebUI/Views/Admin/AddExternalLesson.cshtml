@@ -1,38 +1,54 @@
 ﻿@{ Layout = "_LayoutForAdmin.cshtml";}
-
+@model RKE.UIModels.CRUDLessonForExternalModels.CRUDLessonForExternalModelsDataModel
 @Styles.Render("~/Scripts/semantic-auto-complete/Semantic-UI-CSS-master/semantic.min.css")
-
-<form style="margin-top:10px;" method="get">
+<form action="/Admin/CheckIfLessonExist" method="get">
+<br />
     <!--<input name="group" type="text" />
     <input name="date" type="datetime" />
     <input name="teacher" type="text" />-->
-    <select name="skills" multiple="" class="ui fluid multiple search normal selection dropdown">
-        <option value="">Skills</option>
-        <option value="angular">Angular</option>
-        <option value="css">CSS</option>
-        <option value="design">Graphic Design</option>
-        <option value="ember">Ember</option>
-        <option value="html">HTML</option>
-        <option value="ia">Information Architecture</option>
-        <option value="javascript">Javascript</option>
-        <option value="mech">Mechanical Engineering</option>
-        <option value="meteor">Meteor</option>
-        <option value="node">NodeJS</option>
-        <option value="plumbing">Plumbing</option>
-        <option value="python">Python</option>
-        <option value="rails">Rails</option>
-        <option value="react">React</option>
-        <option value="repair">Kitchen Repair</option>
-        <option value="ruby">Ruby</option>
-        <option value="ui">UI Design</option>
-        <option value="ux">User Experience</option>
+    <select name="groups[]" multiple="" class="ui fluid multiple search normal selection dropdown" id="groups" >
+      @foreach (var item in Model.Groups) {
+          <option value="@item.Id">@item.Name</option>
+      }
     </select>
+    <select name="teachers" multiple="" id="teachers" class=" ui fluid multiple search normal selection dropdown">
+        @foreach (var item in Model.Teachers)
+        {
+            <option value="@item.Id">@item.Name</option>
+        }
+    </select>
+    <select name="disziplins" multiple="" id="disziplins" class="ui fluid multiple search normal selection dropdown">
+        @foreach (var item in Model.Disziplins)
+        {
+            <option value="@item.Id">@item.Name</option>
+        }
+    </select>
+    <select name="auds" multiple="" id="auds" class="ui fluid multiple search normal selection dropdown">
+        @foreach (var item in Model.Auds)
+        {
+            <option value="@item.Id">@item.NumberOfAud</option>
+        }
+    </select>
+    <input name="date" type="date" />
     <input type="submit" />
 </form>
+
 <script>
-    $('.ui.normal.dropdown')
+    $('#groups')
    .dropdown({
        maxSelections: 10
    });
-    
+    $('#teachers')
+  .dropdown({
+      maxSelections: 1
+  });
+    $('#disziplins')
+  .dropdown({
+      maxSelections: 1
+  });
+    $('#auds')
+  .dropdown({
+      maxSelections: 1
+  })
+
 </script>

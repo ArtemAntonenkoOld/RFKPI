@@ -1,1 +1,31 @@
-﻿
+﻿@model RKE.UIModels.RozkladModelForExternalStudents.RozkladModelForExternalStudentsRozkladModel
+@using Bender.Extensions
+@{ Layout = "_LayoutForLessons.cshtml";}
+  <h2 class="text-center">@Model.NameOfGroup</h2>  
+@if (!Model.RozkladModelForExternalLessonsForExternalStudentsModel.IsNullOrEmpty())
+{
+    <div class="col-md-push-1 col-md-10 table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+
+                    <th>Дата</th>
+                    <th>Дисципліна</th>
+                    <th>Викладач</th>
+                    <th>Ауд.</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.RozkladModelForExternalLessonsForExternalStudentsModel)
+                {
+                    <tr>
+                        <td>@item.Date</td>
+                        <td>@item.Disziplin</td>
+                        <td>@item.NameOfTeacher</td>
+                        <td>@item.Aud</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

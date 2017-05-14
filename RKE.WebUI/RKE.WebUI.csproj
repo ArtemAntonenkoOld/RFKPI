@@ -489,6 +489,7 @@
     <Content Include="Scripts\semantic-auto-complete\Semantic-UI-CSS-master\themes\default\assets\fonts\icons.ttf" />
     <Content Include="Scripts\semantic-auto-complete\Semantic-UI-CSS-master\themes\default\assets\fonts\icons.woff" />
     <Content Include="Scripts\semantic-auto-complete\Semantic-UI-CSS-master\themes\default\assets\fonts\icons.woff2" />
+    <Content Include="Views\Admin\EditTeacherLessons.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
