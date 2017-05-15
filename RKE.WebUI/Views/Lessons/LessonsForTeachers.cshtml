@@ -1,11 +1,7 @@
-﻿
-@{ Layout = "_LayoutForLessons.cshtml";}
-
-@Styles.Render("~/Content/LessonsForStudents")
+﻿@{ Layout = "_LayoutForLessons.cshtml";}
 @using Bender.Extensions
 @model RKE.UIModels.RozkladModelsForTeachers.RozkladModelForTeachersRozkladModel
-        <div class="container">
-    <div>@Model.FullName</div>
+    <h2 class="text-center">@Model.FullName</h2>
     <div class="col-md-12">
         @foreach (var item in Model.LessonModel) {
         <table class="table table-responsive table-striped table-bordered ">
@@ -73,4 +69,3 @@
             </table>
         </div>
     }
-</div>

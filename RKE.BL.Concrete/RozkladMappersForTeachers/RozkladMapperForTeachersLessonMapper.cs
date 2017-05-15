@@ -17,19 +17,22 @@ namespace RKE.BL.Concrete.RozkladMappersForTeachers
             List<RozkladModelForTeachersLessonModel> p = new List<RozkladModelForTeachersLessonModel>();
             foreach (var temp in entity)
             {
-                p.Add(new RozkladModelForTeachersLessonModel()
-                {
-                    Day = (int)temp.Day,
-                    Aud = (string)temp.Auds.NumberOfAud,
-                    NumberOfLesson = (int)temp.NumberOfLesson,
-                    Group=_rozkladMapperForTeachersGroupMapper.EntityToModel(temp.LessonGroups.ToList()),
-                    Type = temp.TypeOfLesson,
-                    Week=temp.Week,
-                    NameOfDisziplin=temp.Disziplins.NameOfDisziplin
+                RozkladModelForTeachersLessonModel l = new RozkladModelForTeachersLessonModel();
 
-
-
-                });
+                    l.Day = (int)temp.Day;
+                    if (temp.Auds != null)
+                    {
+                        l.Aud = (string)temp.Auds.NumberOfAud;
+                    }
+                    else {
+                    l.Aud = "";
+                    }
+                    l.NumberOfLesson = (int)temp.NumberOfLesson;
+                    l.Group = _rozkladMapperForTeachersGroupMapper.EntityToModel(temp.LessonGroups.ToList());
+                    l.Type = temp.TypeOfLesson;
+                    l.Week = temp.Week;
+                    l.NameOfDisziplin = temp.Disziplins.NameOfDisziplin;
+                p.Add(l);
             }
             RozkladModelForTeachersLessonModel[][] obj = new RozkladModelForTeachersLessonModel[6][];
             RozkladModelForTeachersLessonModel[][] obj2 = new RozkladModelForTeachersLessonModel[6][];

@@ -24,13 +24,14 @@ namespace RKE.BL.Concrete.RozkladMappersForTeachers
                 RozkladModelForTeachersRozkladModel k = new RozkladModelForTeachersRozkladModel();
                 foreach (var lessonItem in temp.Lessons)
                 {
-                    if (lessonItem.TypeOfLesson != 5)
-                    {
-                        lesson.Add(lessonItem);
-                    }
-                    else if (lessonItem.LessonGroups.FirstOrDefault().Groups.Type==1)
+                    if (lessonItem.LessonGroups.FirstOrDefault().Groups.Type == 1)
                     {
                         external.Add(lessonItem);
+                    }
+                    
+                    else if (lessonItem.TypeOfLesson != 5)
+                    {
+                        lesson.Add(lessonItem);
                     }
                     else
                     {

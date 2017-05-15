@@ -1,12 +1,10 @@
 ﻿@{ Layout = "_LayoutForLessons.cshtml";}
-@Styles.Render("~/Content/LessonsForStudents")
 @using Bender.Extensions
 @model RKE.UIModels.RozkladModelForStudents.RozkladModelForStudentsRozkladModel
-<div class="container">
-    <div>@Model.GroupName</div>
-    <div class="col-md-12">
-    @foreach(var item in Model.LessonModel) { 
-            <table class="table table-responsive table-striped table-bordered ">
+    <h2 class="text-center">@Model.GroupName</h2>
+    <div class="@if (Model.SessionModel.Count != 0) {@Html.Raw("col-md-8") } else {@Html.Raw("col-md-12")  } ">
+    @foreach(var item in Model.LessonModel) {
+            <table class=" table  table-responsive table-striped table-bordered ">
                 <tbody>
                 <tr>
                     <td></td>
@@ -22,6 +20,7 @@
                 {
                     <tr>
                         <td></td>
+                       
                         @for (int j = 0; j < 6; j++)
                         {
                            
@@ -29,8 +28,7 @@
                                 @if (!item[i][j].IsNullOrEmpty())
                                 {
                                     @item[i][j].Disziplin
-                                    @item[i][j].Teacher
-                                                                   
+                                    @item[i][j].Teacher                            
                                 }
                             </td>
 
@@ -44,26 +42,27 @@
 
                 </tbody>
             </table>
-  }
-
-        
-    </div>
-        @if(!Session.IsNullOrEmpty()){
+    }
+    </div>  
+    
+        @if(Model.SessionModel.Count()!=0){
         <div class="col-md-4 table-responsive">
             <table class="table table-striped">
                 <thead>
                     <tr>
                         <th>Дисципліна</th>
+                        <th>Викладач</th>
                         <th>Дата</th>
                         <th>Ауд.</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
                     @foreach (var item in Model.SessionModel)
                     {
                     <tr>
-                        <td></td>
                         <td>@item.Disziplin</td>
+                        <td>@item.Teacher</td>
                         <td>@item.Date</td>
                         <td>@item.Aud</td>
                     </tr>
@@ -71,6 +70,5 @@
                 </tbody>
         </table>
     </div>
-        }
-</div>
-        
+}
+

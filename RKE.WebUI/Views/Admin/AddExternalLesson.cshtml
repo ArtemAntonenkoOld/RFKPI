@@ -1,39 +1,57 @@
 ﻿@{ Layout = "_LayoutForAdmin.cshtml";}
 @model RKE.UIModels.CRUDLessonForExternalModels.CRUDLessonForExternalModelsDataModel
-@Styles.Render("~/Scripts/semantic-auto-complete/Semantic-UI-CSS-master/semantic.min.css")
-<form action="/Admin/CheckIfLessonExist" method="get">
+@Styles.Render("~/Scripts/semantic-auto-complete/Semantic-UI-CSS-master")
+
+
+<h2 class="text-center">Додати заняття</h2>
+<form action="/Admin/CheckIfLessonExist" class="col-md-10 col-md-push-1" method="get">
 <br />
-    <!--<input name="group" type="text" />
-    <input name="date" type="datetime" />
-    <input name="teacher" type="text" />-->
-    <select name="groups[]" multiple="" class="ui fluid multiple search normal selection dropdown" id="groups" >
+    <label for="groups">Виберіть групи</label>
+    <select name="groups" multiple="" class="ui fluid multiple search normal selection dropdown" id="groups" >
       @foreach (var item in Model.Groups) {
           <option value="@item.Id">@item.Name</option>
       }
     </select>
+    <label for="groups">Виберіть викладача</label>
     <select name="teachers" multiple="" id="teachers" class=" ui fluid multiple search normal selection dropdown">
         @foreach (var item in Model.Teachers)
         {
             <option value="@item.Id">@item.Name</option>
         }
     </select>
+    <label for="groups">Виберіть дисципліну</label>
     <select name="disziplins" multiple="" id="disziplins" class="ui fluid multiple search normal selection dropdown">
         @foreach (var item in Model.Disziplins)
         {
             <option value="@item.Id">@item.Name</option>
         }
     </select>
+    <label for="groups">Виберіть аудиторію</label>
     <select name="auds" multiple="" id="auds" class="ui fluid multiple search normal selection dropdown">
         @foreach (var item in Model.Auds)
         {
             <option value="@item.Id">@item.NumberOfAud</option>
         }
     </select>
-    <input name="date" type="date" />
-    <input type="submit" />
+    <label for="date">Виберіть дату</label>
+    <div class='input-group date' id='datetimepicker1'>
+        <input type='datetime' name="date" id="date"class="form-control" />
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+    </div>
+           
+    <input type="submit" class="center-block"/>
 </form>
 
+@Scripts.Render("~/bundles/jquerysemantic")
 <script>
+    $(function () {
+        $('#datetimepicker1').datetimepicker({
+            locale: 'ua'
+        });
+   });
+
     $('#groups')
    .dropdown({
        maxSelections: 10
